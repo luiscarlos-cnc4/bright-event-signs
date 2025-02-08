@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, LogIn } from "lucide-react";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 import AuthModal from "./auth/AuthModal";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -10,6 +11,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,14 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleAuthClick = () => {
+    if (user) {
+      navigate("/dashboard");
+    } else {
+      setShowAuthModal(true);
+    }
+  };
 
   const navItems = [
     { name: "Início", href: "#home" },
@@ -62,7 +72,7 @@ const Navbar = () => {
               
               {/* Login Button */}
               <Button
-                onClick={() => setShowAuthModal(true)}
+                onClick={handleAuthClick}
                 variant="outline"
                 className="border-vegas-gold text-vegas-gold hover:bg-vegas-gold hover:text-black"
               >
@@ -74,7 +84,7 @@ const Navbar = () => {
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center">
               <Button
-                onClick={() => setShowAuthModal(true)}
+                onClick={handleAuthClick}
                 variant="outline"
                 size="sm"
                 className="mr-4 border-vegas-gold text-vegas-gold hover:bg-vegas-gold hover:text-black"
