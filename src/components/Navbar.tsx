@@ -31,12 +31,12 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           <div className="flex-shrink-0">
             <img
               src="/lovable-uploads/3de75a86-eca6-4b71-948e-cd1132d6fac2.png"
               alt="Vegas Letras"
-              className="h-12"
+              className="h-16 sm:h-20" // Increased logo size
             />
           </div>
           
