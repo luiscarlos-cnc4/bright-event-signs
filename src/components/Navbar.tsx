@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-24">
           <div className="flex-shrink-0 cursor-pointer" onClick={scrollToTop}>
             <img
-              src="/lovable-uploads/3de75a86-eca6-4b71-948e-cd1132d6fac2.png"
+              src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png"
               alt="Vegas Letras"
               className="h-48 sm:h-60"
             />
