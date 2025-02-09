@@ -8,6 +8,13 @@ const Hero = () => {
     setVisible(true);
   }, []);
 
+  const handleWhatsAppClick = () => {
+    window.open(
+      "https://wa.me/5519996951746?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20locação%20de%20letreiro%20luminoso",
+      "_blank"
+    );
+  };
+
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden bg-vegas-black">
       <div
@@ -38,8 +45,10 @@ const Hero = () => {
         </p>
         
         <button
+          onClick={handleWhatsAppClick}
           className={`bg-vegas-gold text-vegas-black px-8 py-4 rounded-full text-lg font-semibold 
-          hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg ${
+          hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg 
+          hover:shadow-vegas-gold/50 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
