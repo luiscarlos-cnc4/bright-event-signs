@@ -10,6 +10,10 @@ import { useFormContext } from "react-hook-form";
 const AddressFields = () => {
   const form = useFormContext();
 
+  if (!form) {
+    return null; // or some loading state/error message
+  }
+
   return (
     <div className="space-y-4">
       <FormField
@@ -95,3 +99,4 @@ const AddressFields = () => {
 };
 
 export default AddressFields;
+
