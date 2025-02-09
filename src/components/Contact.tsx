@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -38,7 +37,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-vegas-gold" />
                 <div>
                   <h3 className="font-semibold mb-2">Telefone</h3>
-                  <p className="text-white/70">(XX) XXXX-XXXX</p>
+                  <p className="text-white/70">(19) 99695-1746</p>
                 </div>
               </div>
             </div>

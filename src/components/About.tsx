@@ -15,6 +15,8 @@ const About = () => {
             <Star className="w-6 h-6 text-vegas-gold animate-glow" />
             <Star className="w-6 h-6 text-vegas-gold animate-glow" />
             <Star className="w-6 h-6 text-vegas-gold animate-glow" />
+            <Star className="w-6 h-6 text-vegas-gold animate-glow" />
+            <Star className="w-6 h-6 text-vegas-gold animate-glow" />
           </div>
         </div>
         
@@ -35,7 +37,7 @@ const About = () => {
           <div className="glass-effect p-8 rounded-2xl animate-fade-up delay-200">
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-4">
-                <h3 className="text-4xl font-bold text-vegas-gold mb-2">500+</h3>
+                <h3 className="text-4xl font-bold text-vegas-gold mb-2">200+</h3>
                 <p className="text-sm text-white/70">Eventos Realizados</p>
               </div>
               <div className="text-center p-4">
@@ -44,7 +46,7 @@ const About = () => {
               </div>
               <div className="text-center p-4">
                 <h3 className="text-4xl font-bold text-vegas-gold mb-2">50+</h3>
-                <p className="text-sm text-white/70">Modelos Diferentes</p>
+                <p className="text-sm text-white/70">Letras no Acervo</p>
               </div>
               <div className="text-center p-4">
                 <h3 className="text-4xl font-bold text-vegas-gold mb-2">5⭐</h3>
