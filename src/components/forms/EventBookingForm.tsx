@@ -54,14 +54,14 @@ const EventBookingForm = () => {
     try {
       console.log("Form data:", data);
       toast({
-        title: "Agendamento enviado!",
-        description: "Seu agendamento foi recebido com sucesso.",
+        title: "Formulário enviado!",
+        description: "Seus dados foram salvos com sucesso.",
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Erro ao enviar agendamento",
-        description: "Ocorreu um erro ao enviar seu agendamento. Tente novamente.",
+        title: "Erro ao enviar formulário",
+        description: "Ocorreu um erro ao enviar seus dados. Tente novamente.",
       });
     } finally {
       setIsSubmitting(false);
