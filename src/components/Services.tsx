@@ -1,5 +1,5 @@
 
-import { Heart, Star, Party, Briefcase } from "lucide-react";
+import { Heart, Star, PartyPopper, Briefcase } from "lucide-react";
 
 const ServiceCard = ({ icon: Icon, title, description }: { 
   icon: any, 
@@ -23,7 +23,7 @@ const Services = () => {
       description: "Letreiros personalizados para tornar seu dia ainda mais especial e memorável."
     },
     {
-      icon: Party,
+      icon: PartyPopper,
       title: "Festas",
       description: "Debutantes, aniversários e comemorações com brilho e personalidade."
     },
