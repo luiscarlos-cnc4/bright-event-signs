@@ -1,18 +1,11 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import ContactInfo from "./contact/ContactInfo";
+import EventLocationForm from "./contact/EventLocationForm";
+import ContactAddressForm from "./contact/ContactAddressForm";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -57,173 +50,22 @@ const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div className="glass-effect p-6 rounded-xl animate-fade-up">
-              <div className="flex items-start space-x-4">
-                <Phone className="w-6 h-6 text-vegas-gold" />
-                <div>
-                  <h3 className="font-semibold mb-2 text-white">Telefone</h3>
-                  <p className="text-white/70">(19) 99695-1746</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-effect p-6 rounded-xl animate-fade-up delay-100">
-              <div className="flex items-start space-x-4">
-                <Mail className="w-6 h-6 text-vegas-gold" />
-                <div>
-                  <h3 className="font-semibold mb-2 text-white">E-mail</h3>
-                  <p className="text-white/70">contato@vegasletras.com</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-effect p-6 rounded-xl animate-fade-up delay-200">
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-vegas-gold" />
-                <div>
-                  <h3 className="font-semibold mb-2 text-white">Endereço</h3>
-                  <p className="text-white/70">São Paulo, SP</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ContactInfo />
 
           <form onSubmit={handleSubmit} className="space-y-6 animate-fade-up">
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-vegas-gold">Dados do Evento</h3>
-              <Input
-                required
-                placeholder="Logradouro *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="Número *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="Bairro *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="Complemento *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="CEP *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="Cidade *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Select
-                required
-                value={eventPropertyType}
-                onValueChange={setEventPropertyType}
-              >
-                <SelectTrigger className="bg-white/10 border-vegas-gold/30 text-white">
-                  <SelectValue placeholder="Que tipo de imóvel é? *" />
-                </SelectTrigger>
-                <SelectContent className="bg-vegas-black border-vegas-gold/30">
-                  <SelectItem value="espaco">Espaço de eventos</SelectItem>
-                  <SelectItem value="chacara">Chácara</SelectItem>
-                  <SelectItem value="casa">Casa</SelectItem>
-                  <SelectItem value="publico">Local Público</SelectItem>
-                  <SelectItem value="outros">Outros</SelectItem>
-                </SelectContent>
-              </Select>
-              {eventPropertyType === "outros" && (
-                <Input
-                  required
-                  placeholder="Especifique o tipo de imóvel *"
-                  value={otherEventPropertyType}
-                  onChange={(e) => setOtherEventPropertyType(e.target.value)}
-                  className="bg-white/10 border-vegas-gold/30 text-white"
-                />
-              )}
-            </div>
+            <EventLocationForm
+              eventPropertyType={eventPropertyType}
+              setEventPropertyType={setEventPropertyType}
+              otherEventPropertyType={otherEventPropertyType}
+              setOtherEventPropertyType={setOtherEventPropertyType}
+            />
 
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-vegas-gold">Endereço do Responsável</h3>
-              <Input
-                required
-                placeholder="Logradouro *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="Número *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="Bairro *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="Complemento *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="CEP *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Input
-                required
-                placeholder="Cidade *"
-                className="bg-white/10 border-vegas-gold/30 text-white"
-              />
-              <Select
-                required
-                value={residenceType}
-                onValueChange={setResidenceType}
-              >
-                <SelectTrigger className="bg-white/10 border-vegas-gold/30 text-white">
-                  <SelectValue placeholder="Que tipo de imóvel é? *" />
-                </SelectTrigger>
-                <SelectContent className="bg-vegas-black border-vegas-gold/30">
-                  <SelectItem value="casa">Casa</SelectItem>
-                  <SelectItem value="apartamento">Apartamento</SelectItem>
-                  <SelectItem value="outros">Outros</SelectItem>
-                </SelectContent>
-              </Select>
-              {residenceType === "apartamento" && (
-                <div className="space-y-4">
-                  <Input
-                    required
-                    placeholder="Nome do Condomínio *"
-                    className="bg-white/10 border-vegas-gold/30 text-white"
-                  />
-                  <Input
-                    required
-                    placeholder="Bloco *"
-                    className="bg-white/10 border-vegas-gold/30 text-white"
-                  />
-                  <Input
-                    required
-                    placeholder="Número do Apartamento *"
-                    className="bg-white/10 border-vegas-gold/30 text-white"
-                  />
-                </div>
-              )}
-              {residenceType === "outros" && (
-                <Input
-                  required
-                  placeholder="Especifique o tipo de imóvel *"
-                  value={otherResidenceType}
-                  onChange={(e) => setOtherResidenceType(e.target.value)}
-                  className="bg-white/10 border-vegas-gold/30 text-white"
-                />
-              )}
-            </div>
+            <ContactAddressForm
+              residenceType={residenceType}
+              setResidenceType={setResidenceType}
+              otherResidenceType={otherResidenceType}
+              setOtherResidenceType={setOtherResidenceType}
+            />
 
             <Button
               type="submit"
@@ -239,3 +81,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
