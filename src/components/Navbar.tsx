@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, LogIn } from "lucide-react";
+import { Menu, X, LogIn, Facebook, Instagram } from "lucide-react";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -25,6 +25,13 @@ const Navbar = () => {
     } else {
       navigate("/login");
     }
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open(
+      "https://wa.me/5519996951746?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20locação%20de%20letreiro%20luminoso",
+      "_blank"
+    );
   };
 
   const navItems = [
@@ -66,16 +73,46 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
+
+            {/* Social Media Icons */}
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://www.instagram.com/vegasletras?igsh=MTB5aXF6YWM1ejFoMw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-vegas-gold hover:text-white transition-colors duration-300"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1ADsyc7efA/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-vegas-gold hover:text-white transition-colors duration-300"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+            </div>
             
-            {/* Login Button */}
-            <Button
-              onClick={handleAuthClick}
-              variant="outline"
-              className="border-vegas-gold text-vegas-gold hover:bg-vegas-gold hover:text-black"
-            >
-              <LogIn className="mr-2 h-4 w-4" />
-              {user ? 'Área Restrita' : 'Acessar'}
-            </Button>
+            {/* Buttons */}
+            <div className="flex items-center space-x-4">
+              <Button
+                onClick={handleWhatsAppClick}
+                variant="outline"
+                className="border-vegas-gold text-vegas-gold hover:bg-vegas-gold hover:text-black"
+              >
+                Solicitar Orçamento
+              </Button>
+              
+              <Button
+                onClick={handleAuthClick}
+                variant="outline"
+                className="border-vegas-gold text-vegas-gold hover:bg-vegas-gold hover:text-black"
+              >
+                <LogIn className="mr-2 h-4 w-4" />
+                {user ? 'Área Restrita' : 'Acessar'}
+              </Button>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -113,6 +150,24 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
+            <div className="flex justify-center space-x-4 py-2">
+              <a
+                href="https://www.instagram.com/vegasletras?igsh=MTB5aXF6YWM1ejFoMw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-vegas-gold hover:text-white transition-colors duration-300"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1ADsyc7efA/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-vegas-gold hover:text-white transition-colors duration-300"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       )}

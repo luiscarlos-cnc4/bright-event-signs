@@ -1,7 +1,14 @@
 
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
+  const handleWhatsAppClick = () => {
+    window.open(
+      "https://wa.me/5519996951746?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20locação%20de%20letreiro%20luminoso",
+      "_blank"
+    );
+  };
+
   return (
     <footer className="bg-vegas-black border-t border-vegas-gold/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -40,6 +47,14 @@ const Footer = () => {
                   Contato
                 </a>
               </li>
+              <li>
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="text-vegas-gold hover:text-white transition-colors"
+                >
+                  Solicitar Orçamento
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -47,28 +62,20 @@ const Footer = () => {
             <h3 className="text-vegas-gold font-semibold mb-4">Redes Sociais</h3>
             <div className="flex space-x-4">
               <a
-                href="#"
-                className="text-white/70 hover:text-vegas-gold transition-colors"
+                href="https://www.facebook.com/share/1ADsyc7efA/?mibextid=wwXIfr"
+                className="bg-vegas-black hover:bg-vegas-gold/20 text-vegas-gold p-2 rounded-full transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Facebook className="w-6 h-6" />
               </a>
               <a
-                href="#"
-                className="text-white/70 hover:text-vegas-gold transition-colors"
+                href="https://www.instagram.com/vegasletras?igsh=MTB5aXF6YWM1ejFoMw=="
+                className="bg-vegas-black hover:bg-vegas-gold/20 text-vegas-gold p-2 rounded-full transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Instagram className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
-                className="text-white/70 hover:text-vegas-gold transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter className="w-6 h-6" />
               </a>
             </div>
           </div>
