@@ -84,6 +84,57 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_form_data: {
+        Row: {
+          address_city: string | null
+          address_complement: string | null
+          address_neighborhood: string | null
+          address_number: string | null
+          address_street: string | null
+          address_zipcode: string | null
+          apartment_block: string | null
+          apartment_condo_name: string | null
+          apartment_number: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          residence_type: string | null
+          user_id: string | null
+        }
+        Insert: {
+          address_city?: string | null
+          address_complement?: string | null
+          address_neighborhood?: string | null
+          address_number?: string | null
+          address_street?: string | null
+          address_zipcode?: string | null
+          apartment_block?: string | null
+          apartment_condo_name?: string | null
+          apartment_number?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          residence_type?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          address_city?: string | null
+          address_complement?: string | null
+          address_neighborhood?: string | null
+          address_number?: string | null
+          address_street?: string | null
+          address_zipcode?: string | null
+          apartment_block?: string | null
+          apartment_condo_name?: string | null
+          apartment_number?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          residence_type?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
