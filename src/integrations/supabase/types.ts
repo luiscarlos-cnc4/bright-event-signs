@@ -9,7 +9,81 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          city: string
+          complement: string | null
+          cpf: string
+          created_at: string
+          email: string
+          end_time: string
+          event_address: string
+          event_date: string
+          full_name: string
+          id: string
+          neighborhood: string
+          number: string
+          observations: string | null
+          payment_dates: string[]
+          payment_method: string
+          price: number
+          sign_name: string
+          start_time: string
+          street: string
+          updated_at: string
+          user_id: string
+          zip_code: string
+        }
+        Insert: {
+          city: string
+          complement?: string | null
+          cpf: string
+          created_at?: string
+          email: string
+          end_time: string
+          event_address: string
+          event_date: string
+          full_name: string
+          id?: string
+          neighborhood: string
+          number: string
+          observations?: string | null
+          payment_dates: string[]
+          payment_method: string
+          price: number
+          sign_name: string
+          start_time: string
+          street: string
+          updated_at?: string
+          user_id: string
+          zip_code: string
+        }
+        Update: {
+          city?: string
+          complement?: string | null
+          cpf?: string
+          created_at?: string
+          email?: string
+          end_time?: string
+          event_address?: string
+          event_date?: string
+          full_name?: string
+          id?: string
+          neighborhood?: string
+          number?: string
+          observations?: string | null
+          payment_dates?: string[]
+          payment_method?: string
+          price?: number
+          sign_name?: string
+          start_time?: string
+          street?: string
+          updated_at?: string
+          user_id?: string
+          zip_code?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
