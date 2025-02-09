@@ -27,6 +27,10 @@ export type Database = {
           payment_dates: string[]
           payment_method: string
           price: number
+          residence_type: string | null
+          resident_apartment_number: string | null
+          resident_block: string | null
+          resident_condo_name: string | null
           sign_name: string
           start_time: string
           street: string
@@ -51,6 +55,10 @@ export type Database = {
           payment_dates: string[]
           payment_method: string
           price: number
+          residence_type?: string | null
+          resident_apartment_number?: string | null
+          resident_block?: string | null
+          resident_condo_name?: string | null
           sign_name: string
           start_time: string
           street: string
@@ -75,6 +83,10 @@ export type Database = {
           payment_dates?: string[]
           payment_method?: string
           price?: number
+          residence_type?: string | null
+          resident_apartment_number?: string | null
+          resident_block?: string | null
+          resident_condo_name?: string | null
           sign_name?: string
           start_time?: string
           street?: string

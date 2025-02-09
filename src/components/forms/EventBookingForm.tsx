@@ -18,6 +18,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { ptBR } from "date-fns/locale";
+import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
+import EventLocationForm from "@/components/contact/EventLocationForm";
 
 type EventBookingFormData = {
   // Responsável
@@ -46,22 +49,33 @@ type EventBookingFormData = {
 
 const EventBookingForm = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const form = useForm<EventBookingFormData>();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [eventPropertyType, setEventPropertyType] = useState("");
+  const [otherEventPropertyType, setOtherEventPropertyType] = useState("");
 
   const onSubmit = async (data: EventBookingFormData) => {
     setIsSubmitting(true);
     try {
-      console.log("Form data:", data);
+      const { error } = await supabase.from("bookings").insert({
+        ...data,
+        residence_type: eventPropertyType === "outros" ? otherEventPropertyType : eventPropertyType,
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Formulário enviado!",
         description: "Seus dados foram salvos com sucesso.",
       });
-    } catch (error) {
+      
+      navigate("/thank-you");
+    } catch (error: any) {
       toast({
         variant: "destructive",
         title: "Erro ao enviar formulário",
-        description: "Ocorreu um erro ao enviar seus dados. Tente novamente.",
+        description: error.message,
       });
     } finally {
       setIsSubmitting(false);
@@ -79,7 +93,7 @@ const EventBookingForm = () => {
             name="fullName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nome Completo</FormLabel>
+                <FormLabel className="text-white">Nome Completo</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -92,7 +106,7 @@ const EventBookingForm = () => {
             name="cpf"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>CPF</FormLabel>
+                <FormLabel className="text-white">CPF</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -105,7 +119,7 @@ const EventBookingForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>E-mail</FormLabel>
+                <FormLabel className="text-white">E-mail</FormLabel>
                 <FormControl>
                   <Input type="email" {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -124,7 +138,7 @@ const EventBookingForm = () => {
               name="city"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Cidade</FormLabel>
+                  <FormLabel className="text-white">Cidade</FormLabel>
                   <FormControl>
                     <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                   </FormControl>
@@ -137,7 +151,7 @@ const EventBookingForm = () => {
               name="street"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Rua/Avenida</FormLabel>
+                  <FormLabel className="text-white">Rua/Avenida</FormLabel>
                   <FormControl>
                     <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                   </FormControl>
@@ -150,7 +164,7 @@ const EventBookingForm = () => {
               name="zipCode"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>CEP</FormLabel>
+                  <FormLabel className="text-white">CEP</FormLabel>
                   <FormControl>
                     <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                   </FormControl>
@@ -163,7 +177,7 @@ const EventBookingForm = () => {
               name="number"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Número</FormLabel>
+                  <FormLabel className="text-white">Número</FormLabel>
                   <FormControl>
                     <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                   </FormControl>
@@ -176,7 +190,7 @@ const EventBookingForm = () => {
               name="neighborhood"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Bairro</FormLabel>
+                  <FormLabel className="text-white">Bairro</FormLabel>
                   <FormControl>
                     <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                   </FormControl>
@@ -189,7 +203,7 @@ const EventBookingForm = () => {
               name="complement"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Complemento</FormLabel>
+                  <FormLabel className="text-white">Complemento</FormLabel>
                   <FormControl>
                     <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" placeholder="Bloco, apartamento, etc." />
                   </FormControl>
@@ -201,14 +215,20 @@ const EventBookingForm = () => {
         </div>
 
         {/* Dados do Evento */}
+        <EventLocationForm
+          eventPropertyType={eventPropertyType}
+          setEventPropertyType={setEventPropertyType}
+          otherEventPropertyType={otherEventPropertyType}
+          setOtherEventPropertyType={setOtherEventPropertyType}
+        />
+
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-vegas-gold">Dados do Evento</h2>
           <FormField
             control={form.control}
             name="eventDate"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel>Data do Evento</FormLabel>
+                <FormLabel className="text-white">Data do Evento</FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
@@ -243,7 +263,7 @@ const EventBookingForm = () => {
               name="startTime"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Horário de Início</FormLabel>
+                  <FormLabel className="text-white">Horário de Início</FormLabel>
                   <FormControl>
                     <Input type="time" {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                   </FormControl>
@@ -256,7 +276,7 @@ const EventBookingForm = () => {
               name="endTime"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Horário de Término</FormLabel>
+                  <FormLabel className="text-white">Horário de Término</FormLabel>
                   <FormControl>
                     <Input type="time" {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                   </FormControl>
@@ -270,7 +290,7 @@ const EventBookingForm = () => {
             name="eventAddress"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Endereço do Evento</FormLabel>
+                <FormLabel className="text-white">Endereço do Evento</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -283,7 +303,7 @@ const EventBookingForm = () => {
             name="observations"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Observações</FormLabel>
+                <FormLabel className="text-white">Observações</FormLabel>
                 <FormControl>
                   <Textarea {...field} className="bg-white/10 border-vegas-gold/30 text-white min-h-[100px]" />
                 </FormControl>
@@ -301,7 +321,7 @@ const EventBookingForm = () => {
             name="signName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nome do Letreiro</FormLabel>
+                <FormLabel className="text-white">Nome do Letreiro</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -314,7 +334,7 @@ const EventBookingForm = () => {
             name="price"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Valor</FormLabel>
+                <FormLabel className="text-white">Valor</FormLabel>
                 <FormControl>
                   <Input type="number" {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -327,7 +347,7 @@ const EventBookingForm = () => {
             name="paymentMethod"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Forma de Pagamento</FormLabel>
+                <FormLabel className="text-white">Forma de Pagamento</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
