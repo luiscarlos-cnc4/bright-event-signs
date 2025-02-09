@@ -53,7 +53,7 @@ const Navbar = () => {
             <img
               src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png"
               alt="Vegas Letras"
-              className="h-48 sm:h-60"
+              className="h-10 sm:h-12"
             />
           </div>
           
