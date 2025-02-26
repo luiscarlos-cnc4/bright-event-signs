@@ -19,7 +19,7 @@ const ContactInfo = () => {
           <Mail className="w-6 h-6 text-vegas-gold" />
           <div>
             <h3 className="font-semibold mb-2 text-white">E-mail</h3>
-            <p className="text-white/70">contato@vegasletras.com</p>
+            <p className="text-white/70">vegasletras@gmail.com</p>
           </div>
         </div>
       </div>
@@ -38,4 +38,3 @@ const ContactInfo = () => {
 };
 
 export default ContactInfo;
-

@@ -19,16 +19,34 @@ const EventLocationForm = ({
   setOtherEventPropertyType,
 }: EventLocationFormProps) => {
   const form = useForm();
+  const isCondominium = eventPropertyType.startsWith('cond-');
 
   return (
     <div className="space-y-6">
       <h3 className="text-xl font-semibold text-vegas-gold">Dados do Evento</h3>
       <Form {...form}>
-        <AddressFields />
         <PropertyTypeSelect
           eventPropertyType={eventPropertyType}
           setEventPropertyType={setEventPropertyType}
         />
+        {isCondominium && (
+          <div className="space-y-4 mt-4">
+            <Input
+              required
+              placeholder="Nome do condomínio *"
+              className="bg-white/10 border-vegas-gold/30 text-white"
+            />
+            <Input
+              placeholder="Número do bloco (se aplicável)"
+              className="bg-white/10 border-vegas-gold/30 text-white"
+            />
+            <Input
+              required
+              placeholder="Número do imóvel *"
+              className="bg-white/10 border-vegas-gold/30 text-white"
+            />
+          </div>
+        )}
         {eventPropertyType === "outros" && (
           <Input
             required
@@ -38,10 +56,10 @@ const EventLocationForm = ({
             className="bg-white/10 border-vegas-gold/30 text-white"
           />
         )}
+        <AddressFields />
       </Form>
     </div>
   );
 };
 
 export default EventLocationForm;
-

@@ -26,13 +26,13 @@ const ResidenceTypeSelect = ({
         <SelectValue placeholder="Que tipo de imóvel é? *" />
       </SelectTrigger>
       <SelectContent className="bg-vegas-black border-vegas-gold/30">
-        <SelectItem value="casa">Casa</SelectItem>
-        <SelectItem value="apartamento">Apartamento</SelectItem>
-        <SelectItem value="outros">Outros</SelectItem>
+        <SelectItem value="casa" className="text-white focus:bg-vegas-gold/20 focus:text-white">Casa</SelectItem>
+        <SelectItem value="cond-casa" className="text-white focus:bg-vegas-gold/20 focus:text-white">Condomínio de casa</SelectItem>
+        <SelectItem value="cond-apt" className="text-white focus:bg-vegas-gold/20 focus:text-white">Condomínio de apartamento</SelectItem>
+        <SelectItem value="cond-chacara" className="text-white focus:bg-vegas-gold/20 focus:text-white">Condomínio de chácara</SelectItem>
       </SelectContent>
     </Select>
   );
 };
 
 export default ResidenceTypeSelect;
-
