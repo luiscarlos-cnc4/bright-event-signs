@@ -224,7 +224,48 @@ const Gallery = () => {
     {
       icon: PartyPopper,
       category: "Aniversários",
-      images: []
+      images: [
+        {
+          src: "/lovable-uploads/7f05d47d-292e-4aca-9cf1-609054e5fe3e.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/ae578501-a7e6-4fe7-b179-6adabee36755.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/ed5c6e8c-ecef-435a-b048-159130856df4.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/b5598257-ad65-4587-bcbd-b13801406523.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/4144f56a-526f-483d-a132-98177028e08a.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/098d6897-b260-48c3-8459-61744f9894d1.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/4415e432-f55e-48b8-9d76-3d6f905c7cad.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/af5bb830-76e5-477b-8c9f-7c46cce41796.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/39458a55-0c3f-4e66-995c-7dfb03923afb.png",
+          alt: "Foto de aniversário"
+        },
+        {
+          src: "/lovable-uploads/f09182f1-fdf3-49f6-9966-c04a93582912.png",
+          alt: "Foto de aniversário"
+        }
+      ]
     },
     {
       icon: Gift,
