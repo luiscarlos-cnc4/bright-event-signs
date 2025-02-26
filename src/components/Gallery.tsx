@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Camera, PartyPopper, Heart, Gift, Briefcase, GraduationCap, Music, Baby } from "lucide-react";
+import { PartyPopper, Heart, Gift, Briefcase, GraduationCap, Music } from "lucide-react";
 
 type GalleryItem = {
   icon: any;
@@ -17,56 +16,6 @@ const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const galleryItems: GalleryItem[] = [
-    {
-      icon: Baby,
-      category: "Chá Revelação",
-      images: [
-        {
-          src: "/lovable-uploads/55344fea-61ef-4f6f-9527-4ab7563f144e.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/44811dbe-a263-41ae-8730-c0b38751f16d.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/2ffbbbeb-3ac3-41a7-92f2-f9515e60687f.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/7c70b920-a0c6-4835-96ab-e41d5c05a24a.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/0331a72a-4e6c-4d8c-8c2f-407b0754f651.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/a7353c08-24e2-47da-aea1-b23a27647165.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/b3666a72-0627-4437-b906-1eb968cc2e2b.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/281c7142-e4d8-4613-b8ea-d6ea337c6315.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/9c6e56ad-5e93-40d9-8bc2-6686cbf8157b.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/345e4999-e96f-4510-a427-716c6ea7a53b.png",
-          alt: "Foto do chá revelação"
-        },
-        {
-          src: "/lovable-uploads/5d56ecbe-19ea-40e6-b904-45c1c707ca4b.png",
-          alt: "Foto do chá revelação"
-        }
-      ]
-    },
     {
       icon: Heart,
       category: "Casamentos",
