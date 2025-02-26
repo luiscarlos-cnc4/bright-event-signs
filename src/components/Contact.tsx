@@ -1,25 +1,7 @@
 
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
 import ContactInfo from "./contact/ContactInfo";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const navigate = useNavigate();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
-      description: "Redirecionando para a página de agradecimento...",
-    });
-    setTimeout(() => {
-      navigate("/thank-you");
-    }, 1500);
-  };
-
   return (
     <section id="contact" className="py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-vegas-black via-vegas-black/95 to-vegas-black" />
@@ -40,16 +22,10 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <ContactInfo />
-          <form onSubmit={handleSubmit} className="space-y-6 animate-fade-up">
-            <Button
-              type="submit"
-              className="w-full bg-vegas-gold hover:bg-vegas-gold/80 text-black"
-            >
-              Enviar Mensagem
-            </Button>
-          </form>
+        <div className="flex justify-center">
+          <div className="w-full max-w-2xl">
+            <ContactInfo />
+          </div>
         </div>
       </div>
     </section>
