@@ -53,6 +53,7 @@ const EventBookingForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [eventLocationType, setEventLocationType] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [residenceType, setResidenceType] = useState("");
 
   const onSubmit = async (data: EventBookingFormData) => {
     setIsSubmitting(true);
@@ -70,27 +71,17 @@ const EventBookingForm = () => {
         event_date: format(data.event_date, 'yyyy-MM-dd'),
         start_time: data.start_time,
         end_time: data.end_time,
-        event_street: data.event_street,
-        event_number: data.event_number,
-        event_neighborhood: data.event_neighborhood,
-        event_city: data.event_city,
-        event_location_type: data.event_location_type,
-        event_condo_name: data.event_condo_name,
-        event_block_number: data.event_block_number,
-        event_unit_number: data.event_unit_number,
-        event_other_location: data.event_other_location,
-        event_location_link: data.event_location_link,
+        event_address: `${data.event_street}, ${data.event_number} - ${data.event_neighborhood}, ${data.event_city}`,
         observations: data.observations,
         sign_name: data.sign_name,
         price: data.price,
         payment_method: data.payment_method,
-        residence_type: "",
-        resident_condo_name: data.resident_condo_name,
-        resident_block: data.resident_block,
-        resident_apartment_number: data.resident_apartment_number,
-        event_address: data.event_address,
-        payment_dates: [],
+        payment_dates: data.payment_dates,
         user_id: "00000000-0000-0000-0000-000000000000",
+        residence_type: residenceType,
+        resident_condo_name: data.event_condo_name,
+        resident_block: data.event_block_number,
+        resident_apartment_number: data.event_unit_number,
       });
 
       if (error) throw error;
