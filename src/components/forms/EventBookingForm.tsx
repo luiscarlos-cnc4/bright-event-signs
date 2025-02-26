@@ -1,18 +1,10 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
@@ -20,14 +12,7 @@ import { CalendarIcon } from "lucide-react";
 import { ptBR } from "date-fns/locale";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
-import EventLocationForm from "@/components/contact/EventLocationForm";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 type EventBookingFormData = {
   full_name: string;
@@ -39,13 +24,19 @@ type EventBookingFormData = {
   number: string;
   neighborhood: string;
   complement?: string;
-  residence_type: string;
-  resident_condo_name?: string;
-  resident_block?: string;
-  resident_apartment_number?: string;
   event_date: Date;
   start_time: string;
   end_time: string;
+  event_street: string;
+  event_number: string;
+  event_neighborhood: string;
+  event_city: string;
+  event_location_type: string;
+  event_condo_name?: string;
+  event_block_number?: string;
+  event_unit_number?: string;
+  event_other_location?: string;
+  event_location_link?: string;
   observations?: string;
   sign_name: string;
   price: number;
@@ -60,9 +51,7 @@ const EventBookingForm = () => {
   const navigate = useNavigate();
   const form = useForm<EventBookingFormData>();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [eventPropertyType, setEventPropertyType] = useState("");
-  const [otherEventPropertyType, setOtherEventPropertyType] = useState("");
-  const [residenceType, setResidenceType] = useState("");
+  const [eventLocationType, setEventLocationType] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
 
   const onSubmit = async (data: EventBookingFormData) => {
@@ -81,11 +70,21 @@ const EventBookingForm = () => {
         event_date: format(data.event_date, 'yyyy-MM-dd'),
         start_time: data.start_time,
         end_time: data.end_time,
+        event_street: data.event_street,
+        event_number: data.event_number,
+        event_neighborhood: data.event_neighborhood,
+        event_city: data.event_city,
+        event_location_type: data.event_location_type,
+        event_condo_name: data.event_condo_name,
+        event_block_number: data.event_block_number,
+        event_unit_number: data.event_unit_number,
+        event_other_location: data.event_other_location,
+        event_location_link: data.event_location_link,
         observations: data.observations,
         sign_name: data.sign_name,
         price: data.price,
         payment_method: data.payment_method,
-        residence_type: residenceType,
+        residence_type: "",
         resident_condo_name: data.resident_condo_name,
         resident_block: data.resident_block,
         resident_apartment_number: data.resident_apartment_number,
@@ -343,7 +342,7 @@ const EventBookingForm = () => {
             name="start_time"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Horário de Início</FormLabel>
+                <FormLabel className="text-white">Horário de Início do Evento</FormLabel>
                 <FormControl>
                   <Input type="time" {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -356,7 +355,7 @@ const EventBookingForm = () => {
             name="end_time"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Horário de Término</FormLabel>
+                <FormLabel className="text-white">Horário de Término do Evento</FormLabel>
                 <FormControl>
                   <Input type="time" {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -366,10 +365,10 @@ const EventBookingForm = () => {
           />
           <FormField
             control={form.control}
-            name="event_address"
+            name="event_street"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Endereço do Evento</FormLabel>
+                <FormLabel className="text-white">Logradouro</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                 </FormControl>
@@ -377,25 +376,125 @@ const EventBookingForm = () => {
               </FormItem>
             )}
           />
-          <Select value={eventPropertyType} onValueChange={setEventPropertyType}>
-            <SelectTrigger className="bg-white/10 border-vegas-gold/30 text-white">
-              <SelectValue placeholder="Tipo do Local do Evento *" />
-            </SelectTrigger>
-            <SelectContent className="bg-vegas-black border-vegas-gold/30 text-white">
-              <SelectItem value="casa" className="text-white focus:bg-vegas-gold/20 focus:text-white">Casa</SelectItem>
-              <SelectItem value="salao" className="text-white focus:bg-vegas-gold/20 focus:text-white">Salão de Festas</SelectItem>
-              <SelectItem value="chacara" className="text-white focus:bg-vegas-gold/20 focus:text-white">Chácara</SelectItem>
-              <SelectItem value="outro" className="text-white focus:bg-vegas-gold/20 focus:text-white">Outro</SelectItem>
-            </SelectContent>
-          </Select>
+          <FormField
+            control={form.control}
+            name="event_number"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">Número</FormLabel>
+                <FormControl>
+                  <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="event_neighborhood"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">Bairro</FormLabel>
+                <FormControl>
+                  <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="event_city"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">Cidade</FormLabel>
+                <FormControl>
+                  <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="event_location_type"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">Tipo do Local do Evento</FormLabel>
+                <Select
+                  value={field.value}
+                  onValueChange={(value) => {
+                    field.onChange(value);
+                    setEventLocationType(value);
+                  }}
+                >
+                  <SelectTrigger className="bg-white/10 border-vegas-gold/30 text-white">
+                    <SelectValue placeholder="Selecione o tipo do local" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-vegas-black border-vegas-gold/30 text-white">
+                    <SelectItem value="espaco" className="text-white focus:bg-vegas-gold/20 focus:text-white">Espaço para eventos</SelectItem>
+                    <SelectItem value="chacara" className="text-white focus:bg-vegas-gold/20 focus:text-white">Chácara</SelectItem>
+                    <SelectItem value="casa" className="text-white focus:bg-vegas-gold/20 focus:text-white">Casa</SelectItem>
+                    <SelectItem value="condominio" className="text-white focus:bg-vegas-gold/20 focus:text-white">Algum tipo de condomínio</SelectItem>
+                    <SelectItem value="outro" className="text-white focus:bg-vegas-gold/20 focus:text-white">Outro</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-          {eventPropertyType === "outro" && (
+          {eventLocationType === "condominio" && (
+            <div className="space-y-4">
+              <FormField
+                control={form.control}
+                name="event_condo_name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Nome do condomínio</FormLabel>
+                    <FormControl>
+                      <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="event_block_number"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Número do bloco (se aplicável)</FormLabel>
+                    <FormControl>
+                      <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" placeholder="Deixe em branco se não aplicável" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="event_unit_number"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Número do imóvel</FormLabel>
+                    <FormControl>
+                      <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          )}
+
+          {eventLocationType === "outro" && (
             <FormField
               control={form.control}
-              name="other_event_property_type"
+              name="event_other_location"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-white">Especifique o tipo do local</FormLabel>
+                  <FormLabel className="text-white">Descreva o local</FormLabel>
                   <FormControl>
                     <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
                   </FormControl>
@@ -404,6 +503,20 @@ const EventBookingForm = () => {
               )}
             />
           )}
+
+          <FormField
+            control={form.control}
+            name="event_location_link"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">Link do local do evento</FormLabel>
+                <FormControl>
+                  <Input {...field} type="url" className="bg-white/10 border-vegas-gold/30 text-white" placeholder="https://" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
 
         {/* Dados do Letreiro */}
