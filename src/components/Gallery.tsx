@@ -452,7 +452,28 @@ const Gallery = () => {
     {
       icon: Briefcase,
       category: "Eventos corporativos",
-      images: []
+      images: [
+        {
+          src: "/lovable-uploads/4ece6171-443b-48ad-9084-66a660afd4bd.png",
+          alt: "Foto de evento corporativo"
+        },
+        {
+          src: "/lovable-uploads/e422b42c-d084-43e9-afdb-c9efef3be418.png",
+          alt: "Foto de evento corporativo"
+        },
+        {
+          src: "/lovable-uploads/ad9b6f41-1163-4594-a056-8d430376e2f7.png",
+          alt: "Foto de evento corporativo"
+        },
+        {
+          src: "/lovable-uploads/73a05cbf-6233-4751-b727-2e33074715e0.png",
+          alt: "Foto de evento corporativo"
+        },
+        {
+          src: "/lovable-uploads/9b836f68-af7f-4743-9db0-50e575d18ce5.png",
+          alt: "Foto de evento corporativo"
+        }
+      ]
     },
     {
       icon: GraduationCap,
