@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -49,7 +50,9 @@ type EventBookingFormData = {
   sign_name: string;
   price: number;
   payment_method: string;
-  event_address: string;
+  payment_dates: string[];
+  down_payment?: number;
+  remaining_payment?: number;
 };
 
 const EventBookingForm = () => {
@@ -374,6 +377,33 @@ const EventBookingForm = () => {
               </FormItem>
             )}
           />
+          <Select value={eventPropertyType} onValueChange={setEventPropertyType}>
+            <SelectTrigger className="bg-white/10 border-vegas-gold/30 text-white">
+              <SelectValue placeholder="Tipo do Local do Evento *" />
+            </SelectTrigger>
+            <SelectContent className="bg-vegas-black border-vegas-gold/30 text-white">
+              <SelectItem value="casa" className="text-white focus:bg-vegas-gold/20 focus:text-white">Casa</SelectItem>
+              <SelectItem value="salao" className="text-white focus:bg-vegas-gold/20 focus:text-white">Salão de Festas</SelectItem>
+              <SelectItem value="chacara" className="text-white focus:bg-vegas-gold/20 focus:text-white">Chácara</SelectItem>
+              <SelectItem value="outro" className="text-white focus:bg-vegas-gold/20 focus:text-white">Outro</SelectItem>
+            </SelectContent>
+          </Select>
+
+          {eventPropertyType === "outro" && (
+            <FormField
+              control={form.control}
+              name="other_event_property_type"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">Especifique o tipo do local</FormLabel>
+                  <FormControl>
+                    <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
         </div>
 
         {/* Dados do Letreiro */}
@@ -414,7 +444,10 @@ const EventBookingForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-white">Forma de Pagamento</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
+                <Select onValueChange={(value) => {
+                  field.onChange(value);
+                  setPaymentMethod(value);
+                }} value={field.value}>
                   <SelectTrigger className="bg-white/10 border-vegas-gold/30 text-white">
                     <SelectValue placeholder="Selecione a forma de pagamento *" />
                   </SelectTrigger>
@@ -427,6 +460,57 @@ const EventBookingForm = () => {
               </FormItem>
             )}
           />
+
+          {paymentMethod === "parcelado" && (
+            <div className="space-y-4">
+              <FormField
+                control={form.control}
+                name="down_payment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Valor da Entrada</FormLabel>
+                    <FormControl>
+                      <div className="relative">
+                        <span className="absolute left-3 top-2.5 text-white">R$</span>
+                        <Input {...field} type="number" step="0.01" className="bg-white/10 border-vegas-gold/30 text-white pl-10" />
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="remaining_payment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Valor da Parcela Restante</FormLabel>
+                    <FormControl>
+                      <div className="relative">
+                        <span className="absolute left-3 top-2.5 text-white">R$</span>
+                        <Input {...field} type="number" step="0.01" className="bg-white/10 border-vegas-gold/30 text-white pl-10" />
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="payment_dates"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Data da Parcela Restante</FormLabel>
+                    <FormControl>
+                      <Input type="date" {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          )}
+
           <FormField
             control={form.control}
             name="observations"
