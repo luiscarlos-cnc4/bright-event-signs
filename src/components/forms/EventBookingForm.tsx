@@ -59,8 +59,26 @@ const EventBookingForm = () => {
     setIsSubmitting(true);
     try {
       const { error } = await supabase.from("bookings").insert({
-        ...data,
+        full_name: data.fullName,
+        cpf: data.cpf,
+        email: data.email,
+        city: data.city,
+        street: data.street,
+        zip_code: data.zipCode,
+        number: data.number,
+        neighborhood: data.neighborhood,
+        complement: data.complement,
+        event_date: format(data.eventDate, 'yyyy-MM-dd'),
+        start_time: data.startTime,
+        end_time: data.endTime,
+        event_address: data.eventAddress,
+        observations: data.observations,
+        sign_name: data.signName,
+        price: data.price,
+        payment_method: data.paymentMethod,
+        payment_dates: data.paymentDates.map(date => format(date, 'yyyy-MM-dd')),
         residence_type: eventPropertyType === "outros" ? otherEventPropertyType : eventPropertyType,
+        user_id: "00000000-0000-0000-0000-000000000000", // Temporary UUID, should be replaced with actual user ID
       });
 
       if (error) throw error;
