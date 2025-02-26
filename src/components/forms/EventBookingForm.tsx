@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -79,9 +80,9 @@ const EventBookingForm = () => {
         payment_dates: data.payment_dates,
         user_id: "00000000-0000-0000-0000-000000000000",
         residence_type: residenceType,
-        resident_condo_name: data.event_condo_name,
-        resident_block: data.event_block_number,
-        resident_apartment_number: data.event_unit_number,
+        event_condo_name: data.event_condo_name,
+        event_block_number: data.event_block_number,
+        event_unit_number: data.event_unit_number,
       });
 
       if (error) throw error;
@@ -169,7 +170,7 @@ const EventBookingForm = () => {
             <div className="space-y-4">
               <FormField
                 control={form.control}
-                name="resident_condo_name"
+                name="event_condo_name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-white">Nome do condomínio *</FormLabel>
@@ -182,7 +183,7 @@ const EventBookingForm = () => {
               />
               <FormField
                 control={form.control}
-                name="resident_block"
+                name="event_block_number"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-white">Número do bloco (se aplicável)</FormLabel>
@@ -195,7 +196,7 @@ const EventBookingForm = () => {
               />
               <FormField
                 control={form.control}
-                name="resident_apartment_number"
+                name="event_unit_number"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-white">Número do imóvel *</FormLabel>
