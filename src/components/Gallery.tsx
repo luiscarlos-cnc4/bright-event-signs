@@ -492,7 +492,36 @@ const Gallery = () => {
     {
       icon: Music,
       category: "Shows",
-      images: []
+      images: [
+        {
+          src: "/lovable-uploads/d925eeba-0e54-44e8-a730-f8d96917c92b.png",
+          alt: "Foto de show"
+        },
+        {
+          src: "/lovable-uploads/dd685d09-d7dd-4280-a41a-faa8bbfff7c2.png",
+          alt: "Foto de show"
+        },
+        {
+          src: "/lovable-uploads/48a0c2c3-979f-4074-b5e4-d7ab530945c6.png",
+          alt: "Foto de show"
+        },
+        {
+          src: "/lovable-uploads/69b86785-00d7-4516-963b-822ce51019a3.png",
+          alt: "Foto de show"
+        },
+        {
+          src: "/lovable-uploads/e24aa3e9-0720-4741-9f98-c6efc54e88fa.png",
+          alt: "Foto de show"
+        },
+        {
+          src: "/lovable-uploads/919c2536-f688-4ce7-a01a-05b61c518a5f.png",
+          alt: "Foto de show"
+        },
+        {
+          src: "/lovable-uploads/8fb6c153-8be6-4b62-ac5f-2ecce983be7d.png",
+          alt: "Foto de show"
+        }
+      ]
     }
   ];
 
