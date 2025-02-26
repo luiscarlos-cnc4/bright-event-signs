@@ -70,7 +70,156 @@ const Gallery = () => {
     {
       icon: Heart,
       category: "Casamentos",
-      images: []
+      images: [
+        {
+          src: "/lovable-uploads/5196f240-0585-46d2-a665-98805eea33f3.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/0bd45d6c-2112-4694-b2b0-9de2f615ef77.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/8166f45c-cd9b-413a-9793-00cc6305dc07.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/6dba2568-29d7-412b-ab1b-48b270ada891.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/284b240a-71fa-44aa-81ed-96372288e430.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/ac541c2b-456c-41af-968c-b94643a605fd.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/5f706823-ca6a-4d5d-a514-4ebcedc37f7e.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/c02a2821-137d-41b6-a82d-1cde66429e61.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/869e6a85-16e8-4a50-b3de-42aedbabe974.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/f89e48a4-5773-4a35-ad3e-3fd8833ca75a.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/ad96821b-4386-40a8-8cd1-3422d6a7d675.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/dd03a7ce-01ca-4746-ac41-c88a0e04ee6e.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/992e2ca3-e472-47f9-a739-6582b259bce0.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/3faba2a0-0209-4dd8-9800-4d04b364054f.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/806ab05c-6874-4283-b7d7-174eb81330f7.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/ca61a741-cd8e-4356-bc42-9ca1bb56943e.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/5cb395c9-f081-4be1-a703-01906fe095c6.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/9367eec4-e0f4-458c-b82e-7b20bbfee9e6.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/21d3f944-de1d-4b95-92cb-706a8bf295ed.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/8d924ab0-cc18-47c5-8813-9b29e46dc41c.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/3975849e-2c36-45b0-972b-f7514438c2a9.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/a6caead3-cf4f-4210-94e8-82c7c7c19045.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/bf78e0e9-76d6-4646-adef-c1f7de94e830.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/c7571842-ed08-41de-949f-09a470c13163.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/1fe57e6b-f3a2-4460-8c67-e34d8bd1ff62.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/51b42fb2-f3e4-407a-b006-1361fa16b73b.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/7e7fa7cc-a67c-47a9-a7a6-a153c03d43f8.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/1a7df0c8-6e06-4174-9171-66caff66ee88.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/c83545b1-aac5-48bd-a98b-9b6f31d16a5f.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/5aa16d67-5f0d-43ac-8e6e-311ef9cf76f5.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/d551d236-4c05-4fc5-9426-c139bd7331a9.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/d47b08af-6c33-42cb-9fa6-34168818f1d2.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/e44a501e-a634-46a1-afd4-5fb4e816489a.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/1f114041-ac7d-457a-a2a9-1f3c3dd3fa93.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/2a1c0c86-fef7-4b3e-bd0c-4de780103787.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/4cdca709-00b9-4a38-a0a1-941b3783feed.png",
+          alt: "Foto de casamento"
+        },
+        {
+          src: "/lovable-uploads/c4653e2f-6f33-4194-8277-d294f7674862.png",
+          alt: "Foto de casamento"
+        }
+      ]
     },
     {
       icon: PartyPopper,
@@ -117,7 +266,6 @@ const Gallery = () => {
             deixe-se inspirar para o seu próximo evento.
           </p>
 
-          {/* Categoria buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <button
               onClick={() => setSelectedCategory(null)}
