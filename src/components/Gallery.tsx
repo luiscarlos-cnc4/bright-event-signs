@@ -478,7 +478,16 @@ const Gallery = () => {
     {
       icon: GraduationCap,
       category: "Formaturas",
-      images: []
+      images: [
+        {
+          src: "/lovable-uploads/e7b901b5-2f5f-462a-bb5b-57a7c1e123f9.png",
+          alt: "Foto de formatura"
+        },
+        {
+          src: "/lovable-uploads/361b707d-408f-465f-8acd-6aecf2dc3ab6.png",
+          alt: "Foto de formatura"
+        }
+      ]
     },
     {
       icon: Music,
