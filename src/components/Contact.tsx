@@ -4,16 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import ContactInfo from "./contact/ContactInfo";
-import EventLocationForm from "./contact/EventLocationForm";
-import ContactAddressForm from "./contact/ContactAddressForm";
 
 const Contact = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
-  const [eventPropertyType, setEventPropertyType] = useState<string>("");
-  const [otherEventPropertyType, setOtherEventPropertyType] = useState<string>("");
-  const [residenceType, setResidenceType] = useState<string>("");
-  const [otherResidenceType, setOtherResidenceType] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,29 +38,11 @@ const Contact = () => {
             Estamos aqui para ajudar a tornar seu evento ainda mais especial.
             Entre em contato conosco!
           </p>
-          <p className="text-vegas-gold mt-2">
-            * Todos os campos são de preenchimento obrigatório
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <ContactInfo />
-
           <form onSubmit={handleSubmit} className="space-y-6 animate-fade-up">
-            <EventLocationForm
-              eventPropertyType={eventPropertyType}
-              setEventPropertyType={setEventPropertyType}
-              otherEventPropertyType={otherEventPropertyType}
-              setOtherEventPropertyType={setOtherEventPropertyType}
-            />
-
-            <ContactAddressForm
-              residenceType={residenceType}
-              setResidenceType={setResidenceType}
-              otherResidenceType={otherResidenceType}
-              setOtherResidenceType={setOtherResidenceType}
-            />
-
             <Button
               type="submit"
               className="w-full bg-vegas-gold hover:bg-vegas-gold/80 text-black"
@@ -81,4 +57,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

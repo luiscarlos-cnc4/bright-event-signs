@@ -29,7 +29,7 @@ const ContactInfo = () => {
           <MapPin className="w-6 h-6 text-vegas-gold" />
           <div>
             <h3 className="font-semibold mb-2 text-white">Endereço</h3>
-            <p className="text-white/70">São Paulo, SP</p>
+            <p className="text-white/70">Piracicaba, SP</p>
           </div>
         </div>
       </div>
