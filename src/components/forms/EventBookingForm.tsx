@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -21,6 +20,13 @@ import { ptBR } from "date-fns/locale";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import EventLocationForm from "@/components/contact/EventLocationForm";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 type EventBookingFormData = {
   // Responsável
@@ -34,17 +40,23 @@ type EventBookingFormData = {
   number: string;
   neighborhood: string;
   complement: string;
+  residenceType: string;
+  condoName?: string;
+  blockNumber?: string;
+  unitNumber?: string;
   // Evento
   eventDate: Date;
   startTime: string;
   endTime: string;
-  eventAddress: string;
   observations: string;
   // Letreiro
   signName: string;
   price: number;
+  signObservations: string;
   paymentMethod: string;
-  paymentDates: Date[];
+  downPayment?: number;
+  remainingAmount?: number;
+  remainingPaymentDate?: Date;
 };
 
 const EventBookingForm = () => {
@@ -54,6 +66,8 @@ const EventBookingForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [eventPropertyType, setEventPropertyType] = useState("");
   const [otherEventPropertyType, setOtherEventPropertyType] = useState("");
+  const [residenceType, setResidenceType] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("");
 
   const onSubmit = async (data: EventBookingFormData) => {
     setIsSubmitting(true);
@@ -71,14 +85,17 @@ const EventBookingForm = () => {
         event_date: format(data.eventDate, 'yyyy-MM-dd'),
         start_time: data.startTime,
         end_time: data.endTime,
-        event_address: data.eventAddress,
         observations: data.observations,
         sign_name: data.signName,
         price: data.price,
         payment_method: data.paymentMethod,
-        payment_dates: data.paymentDates.map(date => format(date, 'yyyy-MM-dd')),
-        residence_type: eventPropertyType === "outros" ? otherEventPropertyType : eventPropertyType,
-        user_id: "00000000-0000-0000-0000-000000000000", // Temporary UUID, should be replaced with actual user ID
+        residence_type: residenceType,
+        resident_condo_name: data.condoName,
+        resident_block: data.blockNumber,
+        resident_apartment_number: data.unitNumber,
+        sign_observations: data.signObservations,
+        payment_dates: data.remainingPaymentDate ? [format(data.remainingPaymentDate, 'yyyy-MM-dd')] : [],
+        user_id: "00000000-0000-0000-0000-000000000000",
       });
 
       if (error) throw error;
@@ -150,6 +167,62 @@ const EventBookingForm = () => {
         {/* Endereço Residencial */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-vegas-gold">Endereço Residencial</h2>
+          <Select value={residenceType} onValueChange={setResidenceType}>
+            <SelectTrigger className="bg-white/10 border-vegas-gold/30 text-white">
+              <SelectValue placeholder="Tipo de Residência *" />
+            </SelectTrigger>
+            <SelectContent className="bg-vegas-black border-vegas-gold/30 text-white">
+              <SelectItem value="casa" className="text-white focus:bg-vegas-gold/20 focus:text-white">Casa</SelectItem>
+              <SelectItem value="cond-casa" className="text-white focus:bg-vegas-gold/20 focus:text-white">Condomínio de casa</SelectItem>
+              <SelectItem value="cond-apt" className="text-white focus:bg-vegas-gold/20 focus:text-white">Condomínio de apartamento</SelectItem>
+              <SelectItem value="cond-chacara" className="text-white focus:bg-vegas-gold/20 focus:text-white">Condomínio de chácara</SelectItem>
+            </SelectContent>
+          </Select>
+
+          {residenceType.startsWith('cond-') && (
+            <div className="space-y-4">
+              <FormField
+                control={form.control}
+                name="condoName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Nome do condomínio *</FormLabel>
+                    <FormControl>
+                      <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="blockNumber"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Número do bloco (se aplicável)</FormLabel>
+                    <FormControl>
+                      <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="unitNumber"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Número do imóvel *</FormLabel>
+                    <FormControl>
+                      <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          )}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -233,14 +306,14 @@ const EventBookingForm = () => {
         </div>
 
         {/* Dados do Evento */}
-        <EventLocationForm
-          eventPropertyType={eventPropertyType}
-          setEventPropertyType={setEventPropertyType}
-          otherEventPropertyType={otherEventPropertyType}
-          setOtherEventPropertyType={setOtherEventPropertyType}
-        />
-
         <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-vegas-gold">Dados do Evento</h2>
+          <EventLocationForm
+            eventPropertyType={eventPropertyType}
+            setEventPropertyType={setEventPropertyType}
+            otherEventPropertyType={otherEventPropertyType}
+            setOtherEventPropertyType={setOtherEventPropertyType}
+          />
           <FormField
             control={form.control}
             name="eventDate"
@@ -305,19 +378,6 @@ const EventBookingForm = () => {
           </div>
           <FormField
             control={form.control}
-            name="eventAddress"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-white">Endereço do Evento</FormLabel>
-                <FormControl>
-                  <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
             name="observations"
             render={({ field }) => (
               <FormItem>
@@ -354,7 +414,10 @@ const EventBookingForm = () => {
               <FormItem>
                 <FormLabel className="text-white">Valor</FormLabel>
                 <FormControl>
-                  <Input type="number" {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                  <div className="relative">
+                    <span className="absolute left-3 top-2.5 text-white">R$</span>
+                    <Input {...field} type="number" step="0.01" className="bg-white/10 border-vegas-gold/30 text-white pl-10" />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -362,17 +425,102 @@ const EventBookingForm = () => {
           />
           <FormField
             control={form.control}
-            name="paymentMethod"
+            name="signObservations"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Forma de Pagamento</FormLabel>
+                <FormLabel className="text-white">Observações do Letreiro</FormLabel>
                 <FormControl>
-                  <Input {...field} className="bg-white/10 border-vegas-gold/30 text-white" />
+                  <Textarea {...field} className="bg-white/10 border-vegas-gold/30 text-white min-h-[100px]" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+        </div>
+
+        {/* Forma de Pagamento */}
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-vegas-gold">Forma de Pagamento</h2>
+          <Select value={paymentMethod} onValueChange={setPaymentMethod}>
+            <SelectTrigger className="bg-white/10 border-vegas-gold/30 text-white">
+              <SelectValue placeholder="Selecione a forma de pagamento *" />
+            </SelectTrigger>
+            <SelectContent className="bg-vegas-black border-vegas-gold/30 text-white">
+              <SelectItem value="a-vista" className="text-white focus:bg-vegas-gold/20 focus:text-white">À vista</SelectItem>
+              <SelectItem value="parcelado" className="text-white focus:bg-vegas-gold/20 focus:text-white">Entrada + 1 parcela</SelectItem>
+            </SelectContent>
+          </Select>
+
+          {paymentMethod === 'parcelado' && (
+            <div className="space-y-4">
+              <FormField
+                control={form.control}
+                name="downPayment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Valor de entrada *</FormLabel>
+                    <FormControl>
+                      <div className="relative">
+                        <span className="absolute left-3 top-2.5 text-white">R$</span>
+                        <Input {...field} type="number" step="0.01" className="bg-white/10 border-vegas-gold/30 text-white pl-10" />
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="remainingAmount"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-white">Valor restante *</FormLabel>
+                    <FormControl>
+                      <div className="relative">
+                        <span className="absolute left-3 top-2.5 text-white">R$</span>
+                        <Input {...field} type="number" step="0.01" className="bg-white/10 border-vegas-gold/30 text-white pl-10" />
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="remainingPaymentDate"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel className="text-white">Data de pagamento do valor restante *</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant={"outline"}
+                          className="bg-white/10 border-vegas-gold/30 text-white"
+                        >
+                          {field.value ? (
+                            format(field.value, "PPP", { locale: ptBR })
+                          ) : (
+                            <span>Selecione uma data</span>
+                          )}
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={field.onChange}
+                          locale={ptBR}
+                          className="bg-vegas-black border border-vegas-gold/30"
+                        />
+                      </PopoverContent>
+                    </Popover>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          )}
         </div>
 
         <Button 
