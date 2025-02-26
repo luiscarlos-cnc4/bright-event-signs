@@ -20,88 +20,37 @@ const Gallery = () => {
     {
       icon: Baby,
       category: "Chá Revelação",
-      images: [
-        { 
-          src: "/lovable-uploads/7b8a217f-8093-4fa5-8f45-1f1ebc06dda5.png", 
-          alt: "Chá Revelação com fumaça rosa" 
-        },
-        { 
-          src: "/lovable-uploads/6689edc8-7645-4c35-a1ce-104f97dd80ff.png", 
-          alt: "Casal abraçado com fumaça rosa" 
-        },
-        { 
-          src: "/lovable-uploads/f3e977f2-1c15-4dfe-bcec-b332f09cc8f3.png", 
-          alt: "Casal em cenário romântico" 
-        },
-        { 
-          src: "/lovable-uploads/377f045f-827a-40e7-b66a-8a7d05512a4c.png", 
-          alt: "Chá Revelação com iluminação noturna" 
-        },
-        { 
-          src: "/lovable-uploads/57b9a793-b61d-4ec3-b97c-ad24639626d0.png", 
-          alt: "Decoração com letreiro iluminado" 
-        },
-        { 
-          src: "/lovable-uploads/6a82a23d-bda8-437a-bf32-7ef5d435da0e.png", 
-          alt: "Fogos de artifício no chá revelação" 
-        },
-        { 
-          src: "/lovable-uploads/47d3e618-838d-4905-b9f0-1a4953e9d023.png", 
-          alt: "Casal em cenário com vista panorâmica" 
-        },
-        { 
-          src: "/lovable-uploads/cc6b5a53-8e55-4660-af35-2bb2d8beb76b.png", 
-          alt: "Momento romântico do casal" 
-        }
-      ]
+      images: []
     },
     {
       icon: Heart,
       category: "Casamentos",
-      images: [
-        { src: "/gallery/image3.jpg", alt: "Casamento" },
-        { src: "/gallery/image4.jpg", alt: "Casamento" }
-      ]
+      images: []
     },
     {
       icon: PartyPopper,
       category: "Aniversários",
-      images: [
-        { src: "/gallery/image5.jpg", alt: "Aniversário" },
-        { src: "/gallery/image6.jpg", alt: "Aniversário" }
-      ]
+      images: []
     },
     {
       icon: Gift,
       category: "Debutantes",
-      images: [
-        { src: "/gallery/image1.jpg", alt: "Debutante" },
-        { src: "/gallery/image2.jpg", alt: "Debutante" }
-      ]
+      images: []
     },
     {
       icon: Briefcase,
       category: "Eventos corporativos",
-      images: [
-        { src: "/gallery/image3.jpg", alt: "Evento Corporativo" },
-        { src: "/gallery/image4.jpg", alt: "Evento Corporativo" }
-      ]
+      images: []
     },
     {
       icon: GraduationCap,
       category: "Formaturas",
-      images: [
-        { src: "/gallery/image5.jpg", alt: "Formatura" },
-        { src: "/gallery/image6.jpg", alt: "Formatura" }
-      ]
+      images: []
     },
     {
       icon: Music,
       category: "Shows",
-      images: [
-        { src: "/gallery/image1.jpg", alt: "Show" },
-        { src: "/gallery/image2.jpg", alt: "Show" }
-      ]
+      images: []
     }
   ];
 
