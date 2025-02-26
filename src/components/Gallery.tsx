@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { PartyPopper, Heart, Gift, Briefcase, GraduationCap, Music } from "lucide-react";
+import { PartyPopper, Heart, Gift, Briefcase, GraduationCap, Music, Baby } from "lucide-react";
 
 type GalleryItem = {
   icon: any;
@@ -16,6 +16,136 @@ const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const galleryItems: GalleryItem[] = [
+    {
+      icon: Baby,
+      category: "Chá Revelação",
+      images: [
+        {
+          src: "/lovable-uploads/5c6eb1ba-214b-4a36-8f4d-5237a7a9bea6.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/8d52e079-a6ec-494b-bc26-233a6f5f375d.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/64c946e2-69f9-44e8-9e64-612e4de40f07.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/15aca74e-5da4-4fcb-8cfe-9ef5e666a73a.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/607c2d1b-9ec6-4d03-80fc-42b74467412e.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/b9870c77-bc82-433a-a3df-165d3136ad84.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/940db76a-c635-4c9b-8565-21d193aee053.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/4a4b10eb-dcd2-4650-81a2-f4ca00490a3b.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/521ff04f-8f32-4dbe-bf7e-a242a3f37276.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/12ffd375-8767-48c4-bece-667288111ffc.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/0fd7ca10-aac8-4b76-a2a3-13e083cdfe60.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/d450f10b-a53c-4958-b5b8-070471d85e5b.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/66cd06f8-540c-4a25-925e-c2d82aaf06d6.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/a77a4d0f-9fd2-4d6d-bb4c-3df0090f33f9.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/4a13fde7-3f9e-4fe3-94de-eafd3b00d3b4.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/4be26595-0f27-4932-866f-5da86553492c.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/cc45f874-c7f8-40dc-a3d1-a7a5d32cb415.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/f6ffc6e6-84c7-4714-b020-a08714ebf708.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/aa5e9081-a201-409b-a974-8fee8d3190e4.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/4460aa68-3ef6-4c55-9f6e-e515030898dc.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/f31b171d-b17d-414d-9776-290813b3b5cc.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/3cd13d86-3414-43ca-9641-f4845b8e4e49.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/2c93fad5-afca-4c72-ab96-58751e66d92f.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/00306be4-f5da-4a1b-b5c8-ade5d0a675ee.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/c5422845-1a48-436b-a69b-2bf6f5b94d53.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/8217230b-a3b1-4262-8ad1-fbf2a5e70872.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/81b3cb0b-c2d3-4942-8830-93f6e6a2e9be.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/89ae17d9-73f1-4867-bc7f-bb6541a23f48.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/80662c3a-8819-4471-8db0-dde1b2629411.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/33a9cf19-7241-4c9a-a648-ec6135e4bff7.png",
+          alt: "Foto do chá revelação"
+        },
+        {
+          src: "/lovable-uploads/8ed7aa6b-7bf6-4790-bf86-e0163812eaa0.png",
+          alt: "Foto do chá revelação"
+        }
+      ]
+    },
     {
       icon: Heart,
       category: "Casamentos",
