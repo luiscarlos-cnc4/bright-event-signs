@@ -87,6 +87,7 @@ const EventBookingForm = () => {
         resident_block: data.resident_block,
         resident_apartment_number: data.resident_apartment_number,
         event_address: data.event_address,
+        payment_dates: [],
         user_id: "00000000-0000-0000-0000-000000000000",
       });
 
@@ -409,24 +410,6 @@ const EventBookingForm = () => {
           />
           <FormField
             control={form.control}
-            name="observations"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-white">Observações do Letreiro</FormLabel>
-                <FormControl>
-                  <Textarea {...field} className="bg-white/10 border-vegas-gold/30 text-white min-h-[100px]" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-
-        {/* Forma de Pagamento */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-vegas-gold">Forma de Pagamento</h2>
-          <FormField
-            control={form.control}
             name="payment_method"
             render={({ field }) => (
               <FormItem>
@@ -440,6 +423,19 @@ const EventBookingForm = () => {
                     <SelectItem value="parcelado" className="text-white focus:bg-vegas-gold/20 focus:text-white">Entrada + 1 parcela</SelectItem>
                   </SelectContent>
                 </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="observations"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">Observações do Letreiro</FormLabel>
+                <FormControl>
+                  <Textarea {...field} className="bg-white/10 border-vegas-gold/30 text-white min-h-[100px]" />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
