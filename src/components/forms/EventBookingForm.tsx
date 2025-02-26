@@ -29,31 +29,26 @@ import {
 } from "@/components/ui/select";
 
 type EventBookingFormData = {
-  // Responsável
-  fullName: string;
+  full_name: string;
   cpf: string;
   email: string;
-  // Endereço
   city: string;
   street: string;
-  zipCode: string;
+  zip_code: string;
   number: string;
   neighborhood: string;
   complement: string;
-  residenceType: string;
-  condoName?: string;
-  blockNumber?: string;
-  unitNumber?: string;
-  // Evento
-  eventDate: Date;
-  startTime: string;
-  endTime: string;
+  residence_type: string;
+  resident_condo_name?: string;
+  resident_block?: string;
+  resident_apartment_number?: string;
+  event_date: Date;
+  start_time: string;
+  end_time: string;
   observations: string;
-  // Letreiro
-  signName: string;
+  sign_name: string;
   price: number;
-  signObservations: string;
-  paymentMethod: string;
+  payment_method: string;
   downPayment?: number;
   remainingAmount?: number;
   remainingPaymentDate?: Date;
@@ -73,27 +68,26 @@ const EventBookingForm = () => {
     setIsSubmitting(true);
     try {
       const { error } = await supabase.from("bookings").insert({
-        full_name: data.fullName,
+        full_name: data.full_name,
         cpf: data.cpf,
         email: data.email,
         city: data.city,
         street: data.street,
-        zip_code: data.zipCode,
+        zip_code: data.zip_code,
         number: data.number,
         neighborhood: data.neighborhood,
         complement: data.complement,
-        event_date: format(data.eventDate, 'yyyy-MM-dd'),
-        start_time: data.startTime,
-        end_time: data.endTime,
+        event_date: format(data.event_date, 'yyyy-MM-dd'),
+        start_time: data.start_time,
+        end_time: data.end_time,
         observations: data.observations,
-        sign_name: data.signName,
+        sign_name: data.sign_name,
         price: data.price,
-        payment_method: data.paymentMethod,
+        payment_method: data.payment_method,
         residence_type: residenceType,
-        resident_condo_name: data.condoName,
-        resident_block: data.blockNumber,
-        resident_apartment_number: data.unitNumber,
-        sign_observations: data.signObservations,
+        resident_condo_name: data.resident_condo_name,
+        resident_block: data.resident_block,
+        resident_apartment_number: data.resident_apartment_number,
         payment_dates: data.remainingPaymentDate ? [format(data.remainingPaymentDate, 'yyyy-MM-dd')] : [],
         user_id: "00000000-0000-0000-0000-000000000000",
       });
