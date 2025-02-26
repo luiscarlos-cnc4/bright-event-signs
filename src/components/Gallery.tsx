@@ -270,7 +270,184 @@ const Gallery = () => {
     {
       icon: Gift,
       category: "Debutantes",
-      images: []
+      images: [
+        {
+          src: "/lovable-uploads/a87b91d5-e060-4e95-bbd7-0184d91fbb24.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/e2c6e9de-5008-43f7-80d8-47416444a58a.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/d04bdb8b-5ed0-480e-b2dd-62ea613af6fa.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/0bd6e9c1-9276-426a-99bf-ace119c20a59.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/f3c75a89-1d26-43df-8104-6ad2dae1c493.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/9194cd9a-7a27-410f-8d84-c759ab93f289.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/22c4dba3-c420-4c13-aa45-8120b56fb77e.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/423d3187-b217-4379-8f4b-273015f26ffb.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/0c29a4a6-5400-418a-a5b0-d491f0ec756c.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/a7bd7a20-eaaa-45a7-9da5-70e26ff04918.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/22a5898a-1d0e-44bf-8f9b-8778466d74c4.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/a0b57ef6-f088-4eb9-a929-61bb4724d576.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/95e7286e-321f-459c-bd11-26abbf6c8717.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/e3b48cd5-57a0-4429-ae18-9a460b5a744c.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/bad722be-6af3-4d6f-94eb-a6b8c7a967d7.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/23a02d7c-e217-4eed-b16a-aa1869d13d5e.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/b019dfcf-119e-4cb0-b613-d2bb478ce0e7.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/07a68290-0f18-49f6-9199-416ea69cc872.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/0aa559ad-65b8-4ed1-9846-18c3133f773c.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/1cc853e3-ee52-4424-ae70-620f4de98948.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/b760e554-51a0-4100-a0b4-4364a232c2a1.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/8c2c772c-b0db-4549-8282-8f2e656f55d1.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/3e6ab992-f8f3-4104-998c-3bbd0f76c371.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/d7d0a895-517e-4200-9592-53f58656f6f4.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/30eb710f-6f4d-4ea8-ad1b-3510fe293ced.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/8a933f99-215f-44ec-8911-a76857c61a5c.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/e8da986f-d809-4896-acc1-e93f5796b93f.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/aa83b133-a834-407c-a21c-45a5c2777f54.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/16dc2b11-1cfc-46c8-9390-dbe3e44c4039.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/0b097081-ecd1-4434-a3b9-048f64806e36.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/4b897924-77d6-4c21-a2d5-d1e6707254ba.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/29ffd84c-e817-4849-9198-8e149e2dd7cc.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/f3bc4d9a-f3a1-43c9-b283-d222125e1b6a.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/71abfa84-0a51-4d30-ab93-0b194e026979.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/4de483f2-00e8-4609-8713-13043438da34.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/6a9332a8-3dc0-437d-bca2-8c8b4ccdeffd.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/0482f997-8649-44d0-b866-b572d15c2012.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/477f7b65-9494-4d02-987d-f579c264f9db.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/4e78b581-56ce-48db-8cb5-e14b3ddb260e.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/59952097-6444-4904-b3ef-b5cbd625d91f.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/db6ae260-de27-4893-a3e2-2004885c9d94.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/c39b4955-a6b0-46be-bc08-a4e17bfb774a.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/e9955e33-c19c-430d-bc3c-8c0e26d4f33c.png",
+          alt: "Foto de debutante"
+        },
+        {
+          src: "/lovable-uploads/285f945c-8b57-4161-afba-9787811de5ef.png",
+          alt: "Foto de debutante"
+        }
+      ]
     },
     {
       icon: Briefcase,
