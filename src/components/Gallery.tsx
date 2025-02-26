@@ -23,51 +23,47 @@ const Gallery = () => {
       images: [
         {
           src: "/lovable-uploads/55344fea-61ef-4f6f-9527-4ab7563f144e.png",
-          alt: "Letreiro OH BABY com balões azuis e rosas"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/44811dbe-a263-41ae-8730-c0b38751f16d.png",
-          alt: "Casal se abraçando com fumaça azul"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/2ffbbbeb-3ac3-41a7-92f2-f9515e60687f.png",
-          alt: "Casal em frente ao letreiro BOY GIRL"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/7c70b920-a0c6-4835-96ab-e41d5c05a24a.png",
-          alt: "Momento romântico do casal na piscina"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/0331a72a-4e6c-4d8c-8c2f-407b0754f651.png",
-          alt: "Letreiro BOY GIRL iluminado"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/a7353c08-24e2-47da-aea1-b23a27647165.png",
-          alt: "Casal comemorando com fumaça rosa"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/b3666a72-0627-4437-b906-1eb968cc2e2b.png",
-          alt: "Momento da revelação com fumaça rosa"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/281c7142-e4d8-4613-b8ea-d6ea337c6315.png",
-          alt: "Casal se abraçando durante a revelação"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/9c6e56ad-5e93-40d9-8bc2-6686cbf8157b.png",
-          alt: "Casal posando para foto com letreiro BABY"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/345e4999-e96f-4510-a427-716c6ea7a53b.png",
-          alt: "Foto noturna do casal"
+          alt: "Foto do chá revelação"
         },
         {
           src: "/lovable-uploads/5d56ecbe-19ea-40e6-b904-45c1c707ca4b.png",
-          alt: "Casal em preto e branco"
-        },
-        {
-          src: "/lovable-uploads/659d0973-67ae-4471-a8f2-b89ca5fcb718.png",
-          alt: "Futura mamãe posando com o letreiro"
+          alt: "Foto do chá revelação"
         }
       ]
     },
@@ -164,9 +160,6 @@ const Gallery = () => {
                   className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
                   onClick={() => setSelectedImage(image.src)}
                 />
-              </div>
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-semibold text-lg">{image.alt}</span>
               </div>
             </div>
           ))}
