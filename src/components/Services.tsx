@@ -1,70 +1,62 @@
 
-import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { CalendarHeart, Camera, PartyPopper, Building } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Heart, Star, PartyPopper, Briefcase } from "lucide-react";
 
-const serviceItems = [
-  {
-    icon: CalendarHeart,
-    title: "Casamentos",
-    description: "Crie memórias inesquecíveis com nossos letreiros personalizados para casamentos.",
-    link: "/produto-amor",
-    isSpecial: true
-  },
-  {
-    icon: PartyPopper,
-    title: "Aniversários",
-    description: "Comemore em grande estilo com letreiros personalizados para sua festa de aniversário.",
-    link: "#"
-  },
-  {
-    icon: Camera,
-    title: "Eventos Sociais",
-    description: "Tenha um backdrop perfeito para fotos com nossos letreiros iluminados em eventos sociais.",
-    link: "#"
-  },
-  {
-    icon: Building,
-    title: "Corporativo",
-    description: "Destaque o nome da sua empresa ou slogan com nossos letreiros profissionais.",
-    link: "#"
-  },
-];
+const ServiceCard = ({ icon: Icon, title, description }: { 
+  icon: any, 
+  title: string, 
+  description: string 
+}) => (
+  <div className="glass-effect p-6 rounded-xl hover-glow transition-all duration-300 animate-fade-up">
+    <div className="text-vegas-gold mb-4">
+      <Icon className="w-10 h-10" />
+    </div>
+    <h3 className="text-xl font-semibold mb-3">{title}</h3>
+    <p className="text-white/70">{description}</p>
+  </div>
+);
 
 const Services = () => {
-  return (
-    <section id="servicos" className="py-20 bg-vegas-black">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-2">Nossos Serviços</h2>
-        <p className="text-vegas-gold/80 text-center mb-12 max-w-2xl mx-auto">
-          Oferecemos letreiros luminosos personalizados para diversos tipos de eventos.
-          Escolha o serviço ideal para a sua ocasião.
-        </p>
+  const services = [
+    {
+      icon: Heart,
+      title: "Casamentos",
+      description: "Letreiros personalizados para tornar seu dia ainda mais especial e memorável."
+    },
+    {
+      icon: PartyPopper,
+      title: "Festas",
+      description: "Debutantes, aniversários e comemorações com brilho e personalidade."
+    },
+    {
+      icon: Briefcase,
+      title: "Corporativo",
+      description: "Eventos empresariais, feiras e convenções com elegância e profissionalismo."
+    },
+    {
+      icon: Star,
+      title: "Personalizados",
+      description: "Projetos especiais desenvolvidos de acordo com sua necessidade."
+    }
+  ];
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {serviceItems.map((item, index) => (
-            <Card key={index} className={`glass-effect overflow-hidden transform transition-all duration-300 hover:-translate-y-2 ${item.isSpecial ? 'border-vegas-gold' : 'border-white/10'}`}>
-              <CardContent className="p-6">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${item.isSpecial ? 'bg-vegas-gold text-vegas-black' : 'bg-white/10 text-vegas-gold'}`}>
-                  <item.icon size={24} />
-                </div>
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-white/70 mb-4">{item.description}</p>
-                {item.isSpecial ? (
-                  <Link to={item.link}>
-                    <Button className="w-full bg-vegas-gold hover:bg-vegas-gold/80 text-vegas-black">
-                      Ver detalhes
-                    </Button>
-                  </Link>
-                ) : (
-                  <Button variant="outline" className="w-full border-white/20 hover:border-vegas-gold/50">
-                    Saiba mais
-                  </Button>
-                )}
-              </CardContent>
-            </Card>
+  return (
+    <section id="services" className="py-20 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-vegas-black via-vegas-black/95 to-vegas-black" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">
+            Nossos <span className="text-vegas-gold">Serviços</span>
+          </h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Oferecemos soluções personalizadas para cada tipo de evento, 
+            garantindo que sua ocasião especial seja única e inesquecível.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
           ))}
         </div>
       </div>
