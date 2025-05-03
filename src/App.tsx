@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import ThankYou from "./pages/ThankYou";
+import ProductLanding from "./pages/ProductLanding";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/produto-amor" element={<ProductLanding />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
