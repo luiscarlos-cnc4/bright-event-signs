@@ -18,6 +18,14 @@ export const galleryCategories: GalleryCategory[] = [
       {
         src: "/lovable-uploads/607c2d1b-9ec6-4d03-80fc-42b74467412e.png",
         alt: "Foto do chá revelação"
+      },
+      {
+        src: "/lovable-uploads/b9870c77-bc82-433a-a3df-165d3136ad84.png",
+        alt: "Foto do chá revelação"
+      },
+      {
+        src: "/lovable-uploads/940db76a-c635-4c9b-8565-21d193aee053.png",
+        alt: "Foto do chá revelação"
       }
     ]
   },
@@ -30,6 +38,10 @@ export const galleryCategories: GalleryCategory[] = [
         alt: "Foto de casamento"
       },
       {
+        src: "/lovable-uploads/0bd45d6c-2112-4694-b2b0-9de2f615ef77.png",
+        alt: "Foto de casamento"
+      },
+      {
         src: "/lovable-uploads/8166f45c-cd9b-413a-9793-00cc6305dc07.png",
         alt: "Foto de casamento"
       },
@@ -39,6 +51,10 @@ export const galleryCategories: GalleryCategory[] = [
       },
       {
         src: "/lovable-uploads/284b240a-71fa-44aa-81ed-96372288e430.png",
+        alt: "Foto de casamento"
+      },
+      {
+        src: "/lovable-uploads/ac541c2b-456c-41af-968c-b94643a605fd.png",
         alt: "Foto de casamento"
       },
       {
@@ -56,11 +72,19 @@ export const galleryCategories: GalleryCategory[] = [
         alt: "Foto de aniversário"
       },
       {
+        src: "/lovable-uploads/ae578501-a7e6-4fe7-b179-6adabee36755.png",
+        alt: "Foto de aniversário"
+      },
+      {
         src: "/lovable-uploads/ed5c6e8c-ecef-435a-b048-159130856df4.png",
         alt: "Foto de aniversário"
       },
       {
         src: "/lovable-uploads/b5598257-ad65-4587-bcbd-b13801406523.png",
+        alt: "Foto de aniversário"
+      },
+      {
+        src: "/lovable-uploads/4144f56a-526f-483d-a132-98177028e08a.png",
         alt: "Foto de aniversário"
       }
     ]
@@ -69,6 +93,10 @@ export const galleryCategories: GalleryCategory[] = [
     icon: Gift,
     category: "Debutantes",
     images: [
+      {
+        src: "/lovable-uploads/a87b91d5-e060-4e95-bbd7-0184d91fbb24.png",
+        alt: "Foto de debutante"
+      },
       {
         src: "/lovable-uploads/e2c6e9de-5008-43f7-80d8-47416444a58a.png",
         alt: "Foto de debutante"
@@ -79,6 +107,10 @@ export const galleryCategories: GalleryCategory[] = [
       },
       {
         src: "/lovable-uploads/f3c75a89-1d26-43df-8104-6ad2dae1c493.png",
+        alt: "Foto de debutante"
+      },
+      {
+        src: "/lovable-uploads/0c29a4a6-5400-418a-a5b0-d491f0ec756c.png",
         alt: "Foto de debutante"
       }
     ]
@@ -93,6 +125,10 @@ export const galleryCategories: GalleryCategory[] = [
       },
       {
         src: "/lovable-uploads/e422b42c-d084-43e9-afdb-c9efef3be418.png",
+        alt: "Foto de evento corporativo"
+      },
+      {
+        src: "/lovable-uploads/ad9b6f41-1163-4594-a056-8d430376e2f7.png",
         alt: "Foto de evento corporativo"
       },
       {
@@ -112,6 +148,10 @@ export const galleryCategories: GalleryCategory[] = [
       {
         src: "/lovable-uploads/e7b901b5-2f5f-462a-bb5b-57a7c1e123f9.png",
         alt: "Foto de formatura"
+      },
+      {
+        src: "/lovable-uploads/361b707d-408f-465f-8acd-6aecf2dc3ab6.png",
+        alt: "Foto de formatura"
       }
     ]
   },
@@ -124,11 +164,19 @@ export const galleryCategories: GalleryCategory[] = [
         alt: "Foto de show"
       },
       {
+        src: "/lovable-uploads/dd685d09-d7dd-4280-a41a-faa8bbfff7c2.png",
+        alt: "Foto de show"
+      },
+      {
         src: "/lovable-uploads/48a0c2c3-979f-4074-b5e4-d7ab530945c6.png",
         alt: "Foto de show"
       },
       {
         src: "/lovable-uploads/69b86785-00d7-4516-963b-822ce51019a3.png",
+        alt: "Foto de show"
+      },
+      {
+        src: "/lovable-uploads/e24aa3e9-0720-4741-9f98-c6efc54e88fa.png",
         alt: "Foto de show"
       }
     ]

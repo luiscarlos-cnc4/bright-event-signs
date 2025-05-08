@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { GalleryImage } from './types';
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface ImageGridProps {
   images: GalleryImage[];
@@ -17,14 +16,14 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onImageClick }) => {
           className="relative group overflow-hidden rounded-xl animate-fade-up"
           style={{ animationDelay: `${index * 100}ms` }}
         >
-          <AspectRatio ratio={16 / 9} className="bg-vegas-black/50">
+          <div className="aspect-w-16 aspect-h-9">
             <img
               src={image.src}
               alt={image.alt}
               className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
               onClick={() => onImageClick(image.src)}
             />
-          </AspectRatio>
+          </div>
         </div>
       ))}
     </div>
