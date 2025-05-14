@@ -1,14 +1,11 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, LogIn } from "lucide-react";
-import { Button } from "./ui/button";
+import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { user } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,14 +15,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleAuthClick = () => {
-    if (user) {
-      navigate("/dashboard");
-    } else {
-      navigate("/login");
-    }
-  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -71,29 +60,10 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-            
-            {/* Auth Button */}
-            <Button
-              onClick={handleAuthClick}
-              variant="outline"
-              className="border-vegas-gold text-vegas-gold hover:bg-vegas-gold hover:text-black"
-            >
-              <LogIn className="mr-2 h-4 w-4" />
-              {user ? 'Área Restrita' : 'Acessar'}
-            </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <Button
-              onClick={handleAuthClick}
-              variant="outline"
-              size="sm"
-              className="mr-4 border-vegas-gold text-vegas-gold hover:bg-vegas-gold hover:text-black"
-            >
-              <LogIn className="h-4 w-4" />
-            </Button>
-            
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white p-2"
