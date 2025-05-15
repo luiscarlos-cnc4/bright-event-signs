@@ -12,6 +12,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Sparkles } from 'lucide-react';
+import { toast } from "@/components/ui/use-toast";
 
 const ChaRevelacao = () => {
   const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
@@ -128,10 +130,8 @@ const ChaRevelacao = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
               <div className="inline-flex items-center justify-center p-4 mb-4">
-                <img 
-                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
-                  alt="Exclusividade Brilhante" 
-                  className="h-20 w-auto"
+                <Sparkles 
+                  className="h-20 w-auto text-[#FF00FF]"
                 />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">EXCLUSIVIDADE<br />BRILHANTE</h3>
@@ -142,10 +142,8 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center p-4 mb-4">
-                <img 
-                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
-                  alt="Memórias para a Vida" 
-                  className="h-20 w-auto"
+                <Sparkles 
+                  className="h-20 w-auto text-[#00BFFF]"
                 />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">MEMÓRIAS PARA<br />A VIDA</h3>
@@ -156,10 +154,8 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center p-4 mb-4">
-                <img 
-                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
-                  alt="Qualidade Inigualável" 
-                  className="h-20 w-auto"
+                <Sparkles 
+                  className="h-20 w-auto text-[#FF00FF]"
                 />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">QUALIDADE<br />INIGUALÁVEL</h3>
@@ -170,10 +166,8 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center p-4 mb-4">
-                <img 
-                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
-                  alt="Entrega e Montagem" 
-                  className="h-20 w-auto"
+                <Sparkles 
+                  className="h-20 w-auto text-[#00BFFF]"
                 />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">ENTREGA E<br />MONTAGEM</h3>
@@ -301,10 +295,8 @@ const ChaRevelacao = () => {
           <div className="space-y-16">
             <div className="text-center">
               <div className="inline-flex items-center justify-center p-4 mb-6">
-                <img 
-                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
-                  alt="Escolha do Letreiro" 
-                  className="h-20 w-auto"
+                <Sparkles 
+                  className="h-20 w-auto text-[#FF00FF]"
                 />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">1 - ESCOLHA DO<br />LETREIRO</h3>
@@ -315,10 +307,8 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center p-4 mb-6">
-                <img 
-                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
-                  alt="Faça a Reserva" 
-                  className="h-20 w-auto"
+                <Sparkles 
+                  className="h-20 w-auto text-[#00BFFF]"
                 />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">2 - FAÇA A<br />RESERVA</h3>
@@ -329,10 +319,8 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center p-4 mb-6">
-                <img 
-                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
-                  alt="Entrega e Instalação" 
-                  className="h-20 w-auto"
+                <Sparkles 
+                  className="h-20 w-auto text-[#FF00FF]"
                 />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">3 - ENTREGA E<br />INSTALAÇÃO</h3>
@@ -343,10 +331,8 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center p-4 mb-6">
-                <img 
-                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
-                  alt="Surpreenda-se" 
-                  className="h-20 w-auto"
+                <Sparkles 
+                  className="h-20 w-auto text-[#00BFFF]"
                 />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">4 - SURPREENDA-SE</h3>
