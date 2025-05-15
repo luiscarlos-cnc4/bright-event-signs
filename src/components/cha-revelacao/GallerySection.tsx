@@ -90,7 +90,7 @@ const GallerySection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 px-4 bg-vegas-black">
+    <section className="py-12 md:py-16 px-4 bg-black">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-white">GALERIA</h2>
         
@@ -145,7 +145,7 @@ const GallerySection: React.FC = () => {
       </div>
 
       <Dialog open={!!selectedImage} onOpenChange={closeImage}>
-        <DialogContent className="max-w-4xl bg-vegas-black border-vegas-gold/30">
+        <DialogContent className="max-w-4xl bg-black border-vegas-gold/30">
           <DialogTitle>
             <VisuallyHidden>Imagem ampliada do chá revelação</VisuallyHidden>
           </DialogTitle>

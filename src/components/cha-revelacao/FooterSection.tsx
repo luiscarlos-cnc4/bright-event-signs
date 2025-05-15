@@ -3,7 +3,7 @@ import React from 'react';
 
 const FooterSection: React.FC = () => {
   return (
-    <footer className="py-8 md:py-10 px-4 border-t border-white/10">
+    <footer className="py-8 md:py-10 px-4 border-t border-white/10 bg-black">
       <div className="max-w-4xl mx-auto text-center">
         <img 
           src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png" 

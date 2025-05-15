@@ -33,7 +33,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onWhatsAppClick }) => {
   ];
 
   return (
-    <section className="py-12 md:py-16 px-4">
+    <section className="py-12 md:py-16 px-4 bg-black">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-white">
           VEJA O QUE<br />

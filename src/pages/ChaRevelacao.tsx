@@ -15,7 +15,7 @@ const ChaRevelacao = () => {
   };
 
   return (
-    <div className="bg-vegas-black min-h-screen">
+    <div className="bg-black min-h-screen">
       <Hero onWhatsAppClick={handleWhatsAppClick} />
       <Features onWhatsAppClick={handleWhatsAppClick} />
       <GallerySection />
