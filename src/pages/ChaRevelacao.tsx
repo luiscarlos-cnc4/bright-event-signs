@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { WhatsApp } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -76,7 +76,7 @@ const ChaRevelacao = () => {
           </div>
           
           <Button onClick={handleWhatsAppClick} className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl">
-            <WhatsApp className="mr-2" /> RESERVAR AGORA
+            <MessageCircle className="mr-2" /> RESERVAR AGORA
           </Button>
         </div>
       </section>
@@ -133,7 +133,7 @@ const ChaRevelacao = () => {
           
           <div className="mt-16">
             <Button onClick={handleWhatsAppClick} className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl">
-              <WhatsApp className="mr-2" /> RESERVAR AGORA
+              <MessageCircle className="mr-2" /> RESERVAR AGORA
             </Button>
           </div>
         </div>
@@ -207,7 +207,7 @@ const ChaRevelacao = () => {
           
           <div className="mt-16">
             <Button onClick={handleWhatsAppClick} className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl">
-              <WhatsApp className="mr-2" /> RESERVAR AGORA
+              <MessageCircle className="mr-2" /> RESERVAR AGORA
             </Button>
           </div>
         </div>
@@ -265,7 +265,7 @@ const ChaRevelacao = () => {
           
           <div className="mt-16">
             <Button onClick={handleWhatsAppClick} className="bg-[#FF00FF] hover:bg-[#FF00FF]/80 text-white font-bold py-6 px-8 rounded-full text-xl">
-              <WhatsApp className="mr-2" /> RESERVAR AGORA
+              <MessageCircle className="mr-2" /> RESERVAR AGORA
             </Button>
           </div>
         </div>
