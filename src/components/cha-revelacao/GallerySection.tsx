@@ -1,15 +1,12 @@
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { useCarousel } from "@/lib/utils";
 
 const GallerySection: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [carouselApi, setCarouselApi] = useState<any | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
 
   const galleryImages = [
     {
@@ -78,6 +75,12 @@ const GallerySection: React.FC = () => {
     }
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSelect = (index: number) => {
+    setActiveIndex(index);
+  };
+
   const openImage = (src: string) => {
     setSelectedImage(src);
   };
@@ -86,46 +89,19 @@ const GallerySection: React.FC = () => {
     setSelectedImage(null);
   };
 
-  useEffect(() => {
-    if (!carouselApi) {
-      return;
-    }
-
-    const handleSelect = () => {
-      setActiveIndex(carouselApi.selectedScrollSnap());
-    };
-
-    carouselApi.on("select", handleSelect);
-    carouselApi.on("reInit", handleSelect);
-
-    // Set initial index
-    setActiveIndex(carouselApi.selectedScrollSnap());
-
-    return () => {
-      carouselApi.off("select", handleSelect);
-      carouselApi.off("reInit", handleSelect);
-    };
-  }, [carouselApi]);
-
-  const handleDotClick = useCallback(
-    (index: number) => {
-      if (carouselApi) {
-        carouselApi.scrollTo(index);
-        setActiveIndex(index);
-      }
-    },
-    [carouselApi]
-  );
-
   return (
     <section className="py-12 md:py-16 px-4 bg-vegas-black">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-white">GALERIA</h2>
         
         <div className="relative">
-          <Carousel
+          <Carousel 
             className="w-full"
-            setApi={setCarouselApi}
+            onSelect={(api) => {
+              if (typeof api === 'number') {
+                handleSelect(api);
+              }
+            }}
           >
             <CarouselContent>
               {galleryImages.map((image, index) => (
@@ -152,15 +128,15 @@ const GallerySection: React.FC = () => {
           {galleryImages.map((_, index) => (
             <div 
               key={index} 
-              className={`h-1.5 md:h-2 w-1.5 md:w-2 rounded-full cursor-pointer transition-colors duration-300 ${index === activeIndex ? "bg-[#FF00FF]" : "bg-[#00BFFF]"}`}
-              onClick={() => handleDotClick(index)}
+              className={`h-1.5 md:h-2 w-1.5 md:w-2 rounded-full ${index === activeIndex ? "bg-[#FF00FF]" : "bg-[#00BFFF]"}`}
+              onClick={() => setActiveIndex(index)}
               role="button"
               tabIndex={0}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={index === activeIndex}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
-                  handleDotClick(index);
+                  setActiveIndex(index);
                 }
               }}
             />
