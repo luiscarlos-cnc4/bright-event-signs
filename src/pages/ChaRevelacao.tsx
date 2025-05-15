@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Star } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -226,12 +225,7 @@ const ChaRevelacao = () => {
           </h2>
           
           <div className="relative mx-auto max-w-md">
-            <Carousel 
-              className="mx-auto"
-              onSelect={(index) => {
-                setActiveTestimonialIndex(index);
-              }}
-            >
+            <Carousel className="mx-auto">
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="pl-0">
@@ -261,7 +255,8 @@ const ChaRevelacao = () => {
                 key={index}
                 className={`h-3 w-3 rounded-full ${
                   index === activeTestimonialIndex ? "bg-[#FF00FF]" : "bg-[#00BFFF]"
-                }`}
+                } cursor-pointer`}
+                onClick={() => setActiveTestimonialIndex(index)}
               ></div>
             ))}
           </div>
