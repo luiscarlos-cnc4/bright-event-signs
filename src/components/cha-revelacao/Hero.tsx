@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
 interface HeroProps {
@@ -8,9 +9,9 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   return <section className="min-h-screen bg-black text-white flex flex-col items-center py-0 px-0">
       <div className="max-w-4xl mx-auto text-center">
-        <img src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png" alt="Vegas Letras" className="mx-auto h-12 md:h-16 mb-8" />
+        <img src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png" alt="Vegas Letras" className="mx-auto h-12 md:h-16 mb-4" />
         
-        <h1 className="text-2xl md:text-3xl font-bold mb-4">
+        <h1 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
           Eternize o seu<br />
           momento especial<br />
           com a <span className="text-[#00BFFF]">VEGAS</span> <span className="text-[#FF00FF]">LETRAS</span>
