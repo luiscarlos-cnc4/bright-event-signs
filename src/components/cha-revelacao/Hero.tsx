@@ -9,7 +9,7 @@ const Hero: React.FC<HeroProps> = ({
   onWhatsAppClick
 }) => {
   return <section className="pt-16 md:pt-20 pb-8 md:pb-12 px-4">
-      <div className="min-h-screen bg-black text-white flex flex-col items-center py-0 px-0">
+      <div className="max-w-4xl mx-auto text-center">
         <img src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png" alt="Vegas Letras" className="mx-auto h-12 md:h-15 mb-4" />
         
         <h1 className="text-2xl md:text-3xl leading-tight font-bold">
@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({
           com a <span className="text-[#00BFFF]">VEGAS</span> <span className="text-[#FF00FF]">LETRAS</span>
         </h1>
         
-        <p className="text-base">
+        <p className="text-white/80 text-sm md:text-base lg:text-lg max-w-3xl mx-auto mb-6 px-2">
           Na Vegas Letras fazemos mais que locação de letreiro, nós transformamos sonhos em realizações, 
           e agora é a sua vez! Você está prestes a vivenciar um dos momentos mais emocionantes da sua vida, 
           o chá revelação. E nós estamos aqui para torná-lo inesquecível assim:
