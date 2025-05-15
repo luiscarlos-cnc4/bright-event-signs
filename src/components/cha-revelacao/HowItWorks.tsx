@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 interface HowItWorksProps {
@@ -18,40 +18,48 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onWhatsAppClick }) => {
         
         <div className="space-y-12 md:space-y-16">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-4 mb-4 md:mb-6">
-              <Sparkles className="h-16 md:h-20 w-auto text-[#FF00FF]" />
+            <div className="inline-flex items-center justify-center mb-4 md:mb-6">
+              <div className="rounded-full border-2 border-[#FF00FF] w-12 h-12 flex items-center justify-center">
+                <span className="text-[#FF00FF] text-xl font-bold">1</span>
+              </div>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-[#FF00FF]">1 - ESCOLHA DO<br />LETREIRO</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-[#FF00FF]">ESCOLHA DO<br />LETREIRO</h3>
             <p className="text-white/80 text-sm md:text-base max-w-md mx-auto">
               Oferecemos letreiros luminosos exclusivos que irão adicionar um toque mágico ao seu chá revelação.
             </p>
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-4 mb-4 md:mb-6">
-              <Sparkles className="h-16 md:h-20 w-auto text-[#00BFFF]" />
+            <div className="inline-flex items-center justify-center mb-4 md:mb-6">
+              <div className="rounded-full border-2 border-[#00BFFF] w-12 h-12 flex items-center justify-center">
+                <span className="text-[#00BFFF] text-xl font-bold">2</span>
+              </div>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-[#00BFFF]">2 - FAÇA A<br />RESERVA</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-[#00BFFF]">FAÇA A<br />RESERVA</h3>
             <p className="text-white/80 text-sm md:text-base max-w-md mx-auto">
               Faça sua reserva através do nosso whatsapp, não corra o risco de deixar para depois.
             </p>
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-4 mb-4 md:mb-6">
-              <Sparkles className="h-16 md:h-20 w-auto text-[#FF00FF]" />
+            <div className="inline-flex items-center justify-center mb-4 md:mb-6">
+              <div className="rounded-full border-2 border-[#FF00FF] w-12 h-12 flex items-center justify-center">
+                <span className="text-[#FF00FF] text-xl font-bold">3</span>
+              </div>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-[#FF00FF]">3 - ENTREGA E<br />INSTALAÇÃO</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-[#FF00FF]">ENTREGA E<br />INSTALAÇÃO</h3>
             <p className="text-white/80 text-sm md:text-base max-w-md mx-auto">
               Deixe o trabalho pesado para nós. Entregamos e instalamos com perfeição.
             </p>
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-4 mb-4 md:mb-6">
-              <Sparkles className="h-16 md:h-20 w-auto text-[#00BFFF]" />
+            <div className="inline-flex items-center justify-center mb-4 md:mb-6">
+              <div className="rounded-full border-2 border-[#00BFFF] w-12 h-12 flex items-center justify-center">
+                <span className="text-[#00BFFF] text-xl font-bold">4</span>
+              </div>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-[#00BFFF]">4 - SURPREENDA-SE</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-[#00BFFF]">SURPREENDA-SE</h3>
             <p className="text-white/80 text-sm md:text-base max-w-md mx-auto">
               Deixe a magia acontecer quando revelar o segredo do seu bebê sob a luz brilhante do nosso letreiro.
             </p>
