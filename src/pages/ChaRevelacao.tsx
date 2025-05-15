@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Star } from 'lucide-react';
+import { Star, Sparkles, WhatsApp } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -78,31 +79,32 @@ const ChaRevelacao = () => {
   return (
     <div className="bg-vegas-black min-h-screen">
       {/* Hero Section */}
-      <section className="pt-28 pb-16 px-4">
+      <section className="pt-20 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <img 
             src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png" 
             alt="Vegas Letras" 
-            className="mx-auto h-24 mb-8"
+            className="mx-auto h-12 mb-4"
           />
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-            Eternize o seu<br />
-            momento especial<br />
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">
+            Eternize o seu momento especial<br />
             com a <span className="text-[#00BFFF]">VEGAS</span> <span className="text-[#FF00FF]">LETRAS</span>
           </h1>
           
-          <p className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto mb-10">
+          <p className="text-white/80 text-base md:text-lg max-w-3xl mx-auto mb-6">
             Na Vegas Letras fazemos mais que locação de letreiro, nós transformamos sonhos em realizações, 
             e agora é a sua vez! Você está prestes a vivenciar um dos momentos mais emocionantes da sua vida, 
             o chá revelação. E nós estamos aqui para torná-lo inesquecível assim:
           </p>
           
-          <div className="mb-12 mx-auto max-w-md">
-            <AspectRatio ratio={9/16} className="bg-gray-200 rounded-lg">
-              <div className="w-full h-full flex items-center justify-center bg-gray-800 rounded-lg">
-                <p className="text-white/50">Casal se abraçando em chá revelação com fumaça rosa e letreiro BABY</p>
-              </div>
+          <div className="mb-8 mx-auto max-w-md">
+            <AspectRatio ratio={16/9} className="bg-gray-200 rounded-lg overflow-hidden">
+              <img 
+                src="/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png" 
+                alt="Casal se abraçando em chá revelação com fumaça rosa e letreiro BABY" 
+                className="w-full h-full object-cover"
+              />
             </AspectRatio>
           </div>
           
@@ -110,7 +112,7 @@ const ChaRevelacao = () => {
             onClick={handleWhatsAppClick}
             className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl"
           >
-            <span className="mr-2">📱</span> RESERVAR AGORA
+            <WhatsApp className="mr-2" /> RESERVAR AGORA (19) 99695-1746
           </Button>
         </div>
       </section>
@@ -126,7 +128,7 @@ const ChaRevelacao = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
               <div className="inline-flex items-center justify-center rounded-full border-4 border-[#FF00FF] p-4 mb-4">
-                <Star size={32} className="text-[#FF00FF]" />
+                <Sparkles size={32} className="text-[#FF00FF]" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">EXCLUSIVIDADE<br />BRILHANTE</h3>
               <p className="text-white/80">
@@ -136,7 +138,7 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center rounded-full border-4 border-[#00BFFF] p-4 mb-4">
-                <Star size={32} className="text-[#00BFFF]" />
+                <Sparkles size={32} className="text-[#00BFFF]" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">MEMÓRIAS PARA<br />A VIDA</h3>
               <p className="text-white/80">
@@ -146,7 +148,7 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center rounded-full border-4 border-[#FF00FF] p-4 mb-4">
-                <Star size={32} className="text-[#FF00FF]" />
+                <Sparkles size={32} className="text-[#FF00FF]" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">QUALIDADE<br />INIGUALÁVEL</h3>
               <p className="text-white/80">
@@ -156,7 +158,7 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center rounded-full border-4 border-[#00BFFF] p-4 mb-4">
-                <Star size={32} className="text-[#00BFFF]" />
+                <Sparkles size={32} className="text-[#00BFFF]" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">ENTREGA E<br />MONTAGEM</h3>
               <p className="text-white/80">
@@ -170,7 +172,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#FF00FF] hover:bg-[#FF00FF]/80 text-white font-bold py-6 px-8 rounded-full text-xl"
             >
-              <span className="mr-2">📱</span> RESERVAR AGORA
+              <WhatsApp className="mr-2" /> RESERVAR AGORA (19) 99695-1746
             </Button>
           </div>
         </div>
@@ -266,7 +268,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl"
             >
-              <span className="mr-2">📱</span> RESERVAR AGORA
+              <WhatsApp className="mr-2" /> RESERVAR AGORA (19) 99695-1746
             </Button>
           </div>
         </div>
@@ -283,7 +285,7 @@ const ChaRevelacao = () => {
           <div className="space-y-16">
             <div className="text-center">
               <div className="inline-flex items-center justify-center rounded-full border-4 border-[#FF00FF] p-4 mb-6">
-                <Star size={32} className="text-[#FF00FF]" />
+                <Sparkles size={32} className="text-[#FF00FF]" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">1 - ESCOLHA DO<br />LETREIRO</h3>
               <p className="text-white/80 max-w-md mx-auto">
@@ -293,7 +295,7 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center rounded-full border-4 border-[#00BFFF] p-4 mb-6">
-                <Star size={32} className="text-[#00BFFF]" />
+                <Sparkles size={32} className="text-[#00BFFF]" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">2 - FAÇA A<br />RESERVA</h3>
               <p className="text-white/80 max-w-md mx-auto">
@@ -303,7 +305,7 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center rounded-full border-4 border-[#FF00FF] p-4 mb-6">
-                <Star size={32} className="text-[#FF00FF]" />
+                <Sparkles size={32} className="text-[#FF00FF]" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">3 - ENTREGA E<br />INSTALAÇÃO</h3>
               <p className="text-white/80 max-w-md mx-auto">
@@ -313,7 +315,7 @@ const ChaRevelacao = () => {
             
             <div className="text-center">
               <div className="inline-flex items-center justify-center rounded-full border-4 border-[#00BFFF] p-4 mb-6">
-                <Star size={32} className="text-[#00BFFF]" />
+                <Sparkles size={32} className="text-[#00BFFF]" />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">4 - SURPREENDA-SE</h3>
               <p className="text-white/80 max-w-md mx-auto">
@@ -327,7 +329,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#FF00FF] hover:bg-[#FF00FF]/80 text-white font-bold py-6 px-8 rounded-full text-xl"
             >
-              <span className="mr-2">📱</span> RESERVAR AGORA
+              <WhatsApp className="mr-2" /> RESERVAR AGORA (19) 99695-1746
             </Button>
           </div>
         </div>
