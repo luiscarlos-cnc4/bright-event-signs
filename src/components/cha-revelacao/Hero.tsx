@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Whatsapp } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 interface HeroProps {
   onWhatsAppClick: () => void;
