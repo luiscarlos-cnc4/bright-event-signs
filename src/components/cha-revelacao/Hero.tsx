@@ -9,7 +9,7 @@ const Hero: React.FC<HeroProps> = ({
   onWhatsAppClick
 }) => {
   return <section className="pt-16 md:pt-20 pb-8 md:pb-12 px-4">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="min-h-screen bg-black text-white flex flex-col items-center py-0 px-0">
         <img src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png" alt="Vegas Letras" className="mx-auto h-12 md:h-15 mb-4" />
         
         <h1 className="text-2xl md:text-3xl leading-tight font-bold">
