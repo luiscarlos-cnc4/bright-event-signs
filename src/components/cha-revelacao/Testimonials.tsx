@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { type CarouselApi } from "@/components/ui/carousel/carousel-context";
 
 interface TestimonialsProps {
   onWhatsAppClick: () => void;
@@ -10,6 +11,7 @@ interface TestimonialsProps {
 
 const Testimonials: React.FC<TestimonialsProps> = ({ onWhatsAppClick }) => {
   const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
+  const [api, setApi] = useState<CarouselApi | null>(null);
   
   const testimonials = [
     {
@@ -32,6 +34,28 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onWhatsAppClick }) => {
     }
   ];
 
+  React.useEffect(() => {
+    if (!api) return;
+    
+    const onSelect = () => {
+      setActiveTestimonialIndex(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+    
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
+
+  const handleDotClick = (index: number) => {
+    if (api) {
+      api.scrollTo(index);
+    }
+  };
+
   return (
     <section className="py-12 md:py-16 px-4 bg-black">
       <div className="max-w-4xl mx-auto text-center">
@@ -43,14 +67,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onWhatsAppClick }) => {
         </h2>
         
         <div className="relative mx-auto max-w-xs sm:max-w-sm md:max-w-md">
-          <Carousel 
-            className="mx-auto" 
-            onSelect={(api) => {
-              if (typeof api === 'number') {
-                setActiveTestimonialIndex(api);
-              }
-            }}
-          >
+          <Carousel className="mx-auto" setApi={setApi}>
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-0">
@@ -75,7 +92,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onWhatsAppClick }) => {
             <button 
               key={index} 
               className={`h-2 md:h-3 w-2 md:w-3 rounded-full ${index === activeTestimonialIndex ? "bg-[#FF00FF]" : "bg-[#00BFFF]"}`} 
-              onClick={() => setActiveTestimonialIndex(index)}
+              onClick={() => handleDotClick(index)}
               aria-label={`Depoimento ${index + 1} de ${testimonials.length}`}
               aria-current={index === activeTestimonialIndex}
             />

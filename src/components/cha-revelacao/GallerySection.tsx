@@ -4,11 +4,12 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { useCarousel } from "@/components/ui/carousel/carousel-context";
+import { type CarouselApi } from "@/components/ui/carousel/carousel-context";
 
 const GallerySection: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [api, setApi] = useState<CarouselApi | null>(null);
 
   // Reversed gallery images order
   const galleryImages = [
@@ -85,28 +86,27 @@ const GallerySection: React.FC = () => {
   const closeImage = () => {
     setSelectedImage(null);
   };
-
-  // Custom carousel component to track active slide
-  const CustomCarousel = ({ children, ...props }) => {
-    const carousel = useCarousel();
+  
+  React.useEffect(() => {
+    if (!api) return;
     
-    React.useEffect(() => {
-      if (!carousel.api) return;
-      
-      const onSelect = () => {
-        setActiveIndex(carousel.api.selectedScrollSnap());
-      };
-      
-      carousel.api.on("select", onSelect);
-      carousel.api.on("reInit", onSelect);
-      
-      return () => {
-        carousel.api.off("select", onSelect);
-        carousel.api.off("reInit", onSelect);
-      };
-    }, [carousel.api]);
+    const onSelect = () => {
+      setActiveIndex(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+    
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
 
-    return <Carousel {...props}>{children}</Carousel>;
+  const handleDotClick = (index: number) => {
+    if (api) {
+      api.scrollTo(index);
+    }
   };
 
   return (
@@ -115,7 +115,7 @@ const GallerySection: React.FC = () => {
         <h2 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-white">GALERIA</h2>
         
         <div className="relative">
-          <CustomCarousel className="w-full">
+          <Carousel className="w-full" setApi={setApi}>
             <CarouselContent>
               {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="basis-full sm:basis-1/2 md:basis-1/3">
@@ -134,7 +134,7 @@ const GallerySection: React.FC = () => {
             </CarouselContent>
             <CarouselPrevious className="absolute left-1 bg-gray-800/50 text-white" />
             <CarouselNext className="absolute right-1 bg-gray-800/50 text-white" />
-          </CustomCarousel>
+          </Carousel>
         </div>
         
         <div className="flex justify-center mt-4 md:mt-6 space-x-1 md:space-x-2 overflow-x-auto py-2">
@@ -142,20 +142,14 @@ const GallerySection: React.FC = () => {
             <div 
               key={index} 
               className={`h-1.5 md:h-2 w-1.5 md:w-2 rounded-full ${index === activeIndex ? "bg-[#FF00FF]" : "bg-[#00BFFF]"}`}
-              onClick={() => {
-                if (carousel.api) {
-                  carousel.api.scrollTo(index);
-                }
-              }}
+              onClick={() => handleDotClick(index)}
               role="button"
               tabIndex={0}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={index === activeIndex}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
-                  if (carousel.api) {
-                    carousel.api.scrollTo(index);
-                  }
+                  handleDotClick(index);
                 }
               }}
             />
