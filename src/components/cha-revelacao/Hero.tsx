@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = ({
         
         <div className="mb-6 md:mb-8 mx-auto max-w-sm md:max-w-md">
           <AspectRatio ratio={16 / 9} className="bg-gray-200 rounded-lg overflow-hidden">
-            <img src="/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png" alt="Casal se abraçando em chá revelação com fumaça rosa e letreiro BABY" className="w-full h-full object-cover" />
+            <img src="/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png" alt="Casal se abraçando em chá revelação com fumaça rosa e letreiro BABY" className="w-full rounded-lg shadow-md object-cover" />
           </AspectRatio>
         </div>
         
