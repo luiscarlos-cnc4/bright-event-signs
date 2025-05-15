@@ -36,30 +36,30 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-12 md:py-16 px-4">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-5xl font-bold mb-16 text-center text-white">
+        <h2 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-center text-white">
           DÚVIDAS<br />
           FREQUENTES
         </h2>
         
-        <div className="space-y-4">
+        <div className="space-y-3 md:space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="border border-white/10 rounded overflow-hidden">
               <button 
-                className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" 
+                className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex justify-between items-center focus:outline-none" 
                 onClick={() => toggleFAQ(index)}
               >
-                <span className={`text-xl font-medium ${index % 2 === 0 ? "text-[#FF00FF]" : "text-[#00BFFF]"}`}>
+                <span className={`text-base md:text-xl font-medium ${index % 2 === 0 ? "text-[#FF00FF]" : "text-[#00BFFF]"}`}>
                   {faq.question}
                 </span>
-                <span className={`text-2xl ${index % 2 === 0 ? "text-[#FF00FF]" : "text-[#00BFFF]"}`}>
+                <span className={`text-xl md:text-2xl ${index % 2 === 0 ? "text-[#FF00FF]" : "text-[#00BFFF]"}`}>
                   {activeFAQIndex === index ? "▼" : "▲"}
                 </span>
               </button>
               {activeFAQIndex === index && (
-                <div className="px-6 py-4 bg-gray-800/30">
-                  <p className="text-white">{faq.answer}</p>
+                <div className="px-4 md:px-6 py-3 md:py-4 bg-gray-800/30">
+                  <p className="text-white text-sm md:text-base">{faq.answer}</p>
                 </div>
               )}
             </div>
