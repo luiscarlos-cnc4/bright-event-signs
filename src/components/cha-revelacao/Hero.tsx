@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({
           com a <span className="text-[#00BFFF]">VEGAS</span> <span className="text-[#FF00FF]">LETRAS</span>
         </h1>
         
-        <p className="text-white/80 text-sm md:text-base lg:text-lg max-w-3xl mx-auto mb-6 px-2">
+        <p className="text-base">
           Na Vegas Letras fazemos mais que locação de letreiro, nós transformamos sonhos em realizações, 
           e agora é a sua vez! Você está prestes a vivenciar um dos momentos mais emocionantes da sua vida, 
           o chá revelação. E nós estamos aqui para torná-lo inesquecível assim:
