@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({
         
         <div className="mb-8 mx-auto max-w-md">
           <div className="aspect-video relative rounded-lg overflow-hidden">
-            <img src="/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png" alt="Casal se abraçando em chá revelação com fumaça rosa e letreiro BABY" className="w-full h-full object-cover alt-[letreiro luminoso ch\xE1 revela\xE7\xE3o]\n" />
+            <img src="/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png" alt="Casal se abraçando em chá revelação com fumaça rosa e letreiro BABY" className="w-full h-full object-cover alt-[decoracao-cha-revelacao-em-piracicaba]\\n" />
           </div>
         </div>
         
