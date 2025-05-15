@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Star, Sparkles, WhatsApp } from 'lucide-react';
+import { Star, Sparkles, MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -112,7 +111,7 @@ const ChaRevelacao = () => {
             onClick={handleWhatsAppClick}
             className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl"
           >
-            <WhatsApp className="mr-2" /> RESERVAR AGORA (19) 99695-1746
+            <MessageCircle className="mr-2" /> RESERVAR AGORA (19) 99695-1746
           </Button>
         </div>
       </section>
@@ -172,7 +171,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#FF00FF] hover:bg-[#FF00FF]/80 text-white font-bold py-6 px-8 rounded-full text-xl"
             >
-              <WhatsApp className="mr-2" /> RESERVAR AGORA (19) 99695-1746
+              <MessageCircle className="mr-2" /> RESERVAR AGORA (19) 99695-1746
             </Button>
           </div>
         </div>
@@ -268,7 +267,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl"
             >
-              <WhatsApp className="mr-2" /> RESERVAR AGORA (19) 99695-1746
+              <MessageCircle className="mr-2" /> RESERVAR AGORA (19) 99695-1746
             </Button>
           </div>
         </div>
@@ -329,7 +328,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#FF00FF] hover:bg-[#FF00FF]/80 text-white font-bold py-6 px-8 rounded-full text-xl"
             >
-              <WhatsApp className="mr-2" /> RESERVAR AGORA (19) 99695-1746
+              <MessageCircle className="mr-2" /> RESERVAR AGORA (19) 99695-1746
             </Button>
           </div>
         </div>
