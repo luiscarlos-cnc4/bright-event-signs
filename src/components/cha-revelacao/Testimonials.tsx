@@ -44,7 +44,15 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onWhatsAppClick }) => {
         </h2>
         
         <div className="relative mx-auto max-w-xs sm:max-w-sm md:max-w-md">
-          <Carousel className="mx-auto" onSelect={(index) => setActiveTestimonialIndex(index)}>
+          <Carousel 
+            className="mx-auto" 
+            onSelect={(index) => {
+              // Fix: Cast index to number or ensure it's a number before setting state
+              if (typeof index === 'number') {
+                setActiveTestimonialIndex(index);
+              }
+            }}
+          >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-0">
