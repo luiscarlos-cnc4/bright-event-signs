@@ -228,10 +228,8 @@ const ChaRevelacao = () => {
           <div className="relative mx-auto max-w-md">
             <Carousel 
               className="mx-auto"
-              onSelect={(api) => {
-                if (api) {
-                  setActiveTestimonialIndex(api.selectedScrollSnap());
-                }
+              onSelect={(index) => {
+                setActiveTestimonialIndex(index);
               }}
             >
               <CarouselContent>
