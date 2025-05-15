@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Star, Sparkles, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -83,7 +84,7 @@ const ChaRevelacao = () => {
           <img 
             src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png" 
             alt="Vegas Letras" 
-            className="mx-auto h-12 mb-4"
+            className="mx-auto h-15 mb-4" // Increased size by 25% from h-12 to h-15
           />
           
           <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">
@@ -111,7 +112,7 @@ const ChaRevelacao = () => {
             onClick={handleWhatsAppClick}
             className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl"
           >
-            <MessageCircle className="mr-2" /> RESERVAR AGORA (19) 99695-1746
+            <MessageCircle className="mr-2" /> RESERVAR AGORA
           </Button>
         </div>
       </section>
@@ -126,8 +127,12 @@ const ChaRevelacao = () => {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center rounded-full border-4 border-[#FF00FF] p-4 mb-4">
-                <Sparkles size={32} className="text-[#FF00FF]" />
+              <div className="inline-flex items-center justify-center p-4 mb-4">
+                <img 
+                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
+                  alt="Exclusividade Brilhante" 
+                  className="h-20 w-auto"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">EXCLUSIVIDADE<br />BRILHANTE</h3>
               <p className="text-white/80">
@@ -136,8 +141,12 @@ const ChaRevelacao = () => {
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center rounded-full border-4 border-[#00BFFF] p-4 mb-4">
-                <Sparkles size={32} className="text-[#00BFFF]" />
+              <div className="inline-flex items-center justify-center p-4 mb-4">
+                <img 
+                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
+                  alt="Memórias para a Vida" 
+                  className="h-20 w-auto"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">MEMÓRIAS PARA<br />A VIDA</h3>
               <p className="text-white/80">
@@ -146,8 +155,12 @@ const ChaRevelacao = () => {
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center rounded-full border-4 border-[#FF00FF] p-4 mb-4">
-                <Sparkles size={32} className="text-[#FF00FF]" />
+              <div className="inline-flex items-center justify-center p-4 mb-4">
+                <img 
+                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
+                  alt="Qualidade Inigualável" 
+                  className="h-20 w-auto"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">QUALIDADE<br />INIGUALÁVEL</h3>
               <p className="text-white/80">
@@ -156,8 +169,12 @@ const ChaRevelacao = () => {
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center rounded-full border-4 border-[#00BFFF] p-4 mb-4">
-                <Sparkles size={32} className="text-[#00BFFF]" />
+              <div className="inline-flex items-center justify-center p-4 mb-4">
+                <img 
+                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
+                  alt="Entrega e Montagem" 
+                  className="h-20 w-auto"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">ENTREGA E<br />MONTAGEM</h3>
               <p className="text-white/80">
@@ -171,7 +188,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#FF00FF] hover:bg-[#FF00FF]/80 text-white font-bold py-6 px-8 rounded-full text-xl"
             >
-              <MessageCircle className="mr-2" /> RESERVAR AGORA (19) 99695-1746
+              <MessageCircle className="mr-2" /> RESERVAR AGORA
             </Button>
           </div>
         </div>
@@ -267,7 +284,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black font-bold py-6 px-8 rounded-full text-xl"
             >
-              <MessageCircle className="mr-2" /> RESERVAR AGORA (19) 99695-1746
+              <MessageCircle className="mr-2" /> RESERVAR AGORA
             </Button>
           </div>
         </div>
@@ -283,8 +300,12 @@ const ChaRevelacao = () => {
           
           <div className="space-y-16">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center rounded-full border-4 border-[#FF00FF] p-4 mb-6">
-                <Sparkles size={32} className="text-[#FF00FF]" />
+              <div className="inline-flex items-center justify-center p-4 mb-6">
+                <img 
+                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
+                  alt="Escolha do Letreiro" 
+                  className="h-20 w-auto"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">1 - ESCOLHA DO<br />LETREIRO</h3>
               <p className="text-white/80 max-w-md mx-auto">
@@ -293,8 +314,12 @@ const ChaRevelacao = () => {
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center rounded-full border-4 border-[#00BFFF] p-4 mb-6">
-                <Sparkles size={32} className="text-[#00BFFF]" />
+              <div className="inline-flex items-center justify-center p-4 mb-6">
+                <img 
+                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
+                  alt="Faça a Reserva" 
+                  className="h-20 w-auto"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">2 - FAÇA A<br />RESERVA</h3>
               <p className="text-white/80 max-w-md mx-auto">
@@ -303,8 +328,12 @@ const ChaRevelacao = () => {
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center rounded-full border-4 border-[#FF00FF] p-4 mb-6">
-                <Sparkles size={32} className="text-[#FF00FF]" />
+              <div className="inline-flex items-center justify-center p-4 mb-6">
+                <img 
+                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
+                  alt="Entrega e Instalação" 
+                  className="h-20 w-auto"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#FF00FF]">3 - ENTREGA E<br />INSTALAÇÃO</h3>
               <p className="text-white/80 max-w-md mx-auto">
@@ -313,8 +342,12 @@ const ChaRevelacao = () => {
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center rounded-full border-4 border-[#00BFFF] p-4 mb-6">
-                <Sparkles size={32} className="text-[#00BFFF]" />
+              <div className="inline-flex items-center justify-center p-4 mb-6">
+                <img 
+                  src="/lovable-uploads/91988031-e92c-4bc7-bf6a-5253acdde71a.png" 
+                  alt="Surpreenda-se" 
+                  className="h-20 w-auto"
+                />
               </div>
               <h3 className="text-3xl font-bold mb-4 text-[#00BFFF]">4 - SURPREENDA-SE</h3>
               <p className="text-white/80 max-w-md mx-auto">
@@ -328,7 +361,7 @@ const ChaRevelacao = () => {
               onClick={handleWhatsAppClick}
               className="bg-[#FF00FF] hover:bg-[#FF00FF]/80 text-white font-bold py-6 px-8 rounded-full text-xl"
             >
-              <MessageCircle className="mr-2" /> RESERVAR AGORA (19) 99695-1746
+              <MessageCircle className="mr-2" /> RESERVAR AGORA
             </Button>
           </div>
         </div>
