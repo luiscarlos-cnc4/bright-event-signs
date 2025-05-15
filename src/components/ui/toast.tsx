@@ -131,6 +131,9 @@ type ToasterToast = ToastOptions & {
   title?: React.ReactNode
   description?: React.ReactNode
   action?: React.ReactNode
+  // Add the 'open' property to fix the type error
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
 }
 
 const actionTypes = {
