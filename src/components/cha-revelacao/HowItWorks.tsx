@@ -19,8 +19,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onWhatsAppClick }) => {
         <div className="space-y-16 md:space-y-24">
           <div className="text-center">
             <div className="inline-flex items-center justify-center mb-6">
-              <div className="rounded-full bg-[#FF00FF] w-14 h-14 flex items-center justify-center">
-                <Star className="text-white w-8 h-8" />
+              <div className="rounded-full border-2 border-[#FF00FF] w-16 h-16 flex items-center justify-center">
+                <Star className="text-[#FF00FF] w-8 h-8" fill="#FF00FF" strokeWidth={1} />
               </div>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#FF00FF]">1 - ESCOLHA DO<br />LETREIRO</h3>
@@ -31,8 +31,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onWhatsAppClick }) => {
           
           <div className="text-center">
             <div className="inline-flex items-center justify-center mb-6">
-              <div className="rounded-full bg-[#00BFFF] w-14 h-14 flex items-center justify-center">
-                <Star className="text-white w-8 h-8" />
+              <div className="rounded-full border-2 border-[#00BFFF] w-16 h-16 flex items-center justify-center">
+                <Star className="text-[#00BFFF] w-8 h-8" fill="#00BFFF" strokeWidth={1} />
               </div>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#00BFFF]">2 - FAÇA A<br />RESERVA</h3>
@@ -43,8 +43,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onWhatsAppClick }) => {
           
           <div className="text-center">
             <div className="inline-flex items-center justify-center mb-6">
-              <div className="rounded-full bg-[#FF00FF] w-14 h-14 flex items-center justify-center">
-                <Star className="text-white w-8 h-8" />
+              <div className="rounded-full border-2 border-[#FF00FF] w-16 h-16 flex items-center justify-center">
+                <Star className="text-[#FF00FF] w-8 h-8" fill="#FF00FF" strokeWidth={1} />
               </div>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#FF00FF]">3 - ENTREGA E<br />INSTALAÇÃO</h3>
@@ -55,8 +55,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onWhatsAppClick }) => {
           
           <div className="text-center">
             <div className="inline-flex items-center justify-center mb-6">
-              <div className="rounded-full bg-[#00BFFF] w-14 h-14 flex items-center justify-center">
-                <Star className="text-white w-8 h-8" />
+              <div className="rounded-full border-2 border-[#00BFFF] w-16 h-16 flex items-center justify-center">
+                <Star className="text-[#00BFFF] w-8 h-8" fill="#00BFFF" strokeWidth={1} />
               </div>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#00BFFF]">4 - SURPREENDA-SE</h3>

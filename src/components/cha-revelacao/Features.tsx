@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Star } from 'lucide-react';
 
 interface FeaturesProps {
   onWhatsAppClick: () => void;
@@ -17,11 +18,9 @@ const Features: React.FC<FeaturesProps> = ({ onWhatsAppClick }) => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-4 mb-4">
-              <div className="rounded-full border-2 border-[#FF00FF] w-12 h-12 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-[#FF00FF]">
-                  <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                </svg>
+            <div className="inline-flex items-center justify-center mb-4">
+              <div className="rounded-full border-2 border-[#FF00FF] w-16 h-16 flex items-center justify-center">
+                <Star className="text-[#FF00FF] w-8 h-8" fill="#FF00FF" strokeWidth={1} />
               </div>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#FF00FF]">EXCLUSIVIDADE<br />BRILHANTE</h3>
@@ -31,11 +30,9 @@ const Features: React.FC<FeaturesProps> = ({ onWhatsAppClick }) => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-4 mb-4">
-              <div className="rounded-full border-2 border-[#00BFFF] w-12 h-12 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-[#00BFFF]">
-                  <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                </svg>
+            <div className="inline-flex items-center justify-center mb-4">
+              <div className="rounded-full border-2 border-[#00BFFF] w-16 h-16 flex items-center justify-center">
+                <Star className="text-[#00BFFF] w-8 h-8" fill="#00BFFF" strokeWidth={1} />
               </div>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#00BFFF]">MEMÓRIAS PARA<br />A VIDA</h3>
@@ -45,11 +42,9 @@ const Features: React.FC<FeaturesProps> = ({ onWhatsAppClick }) => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-4 mb-4">
-              <div className="rounded-full border-2 border-[#FF00FF] w-12 h-12 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-[#FF00FF]">
-                  <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                </svg>
+            <div className="inline-flex items-center justify-center mb-4">
+              <div className="rounded-full border-2 border-[#FF00FF] w-16 h-16 flex items-center justify-center">
+                <Star className="text-[#FF00FF] w-8 h-8" fill="#FF00FF" strokeWidth={1} />
               </div>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#FF00FF]">QUALIDADE<br />INIGUALÁVEL</h3>
@@ -59,11 +54,9 @@ const Features: React.FC<FeaturesProps> = ({ onWhatsAppClick }) => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-4 mb-4">
-              <div className="rounded-full border-2 border-[#00BFFF] w-12 h-12 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-[#00BFFF]">
-                  <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                </svg>
+            <div className="inline-flex items-center justify-center mb-4">
+              <div className="rounded-full border-2 border-[#00BFFF] w-16 h-16 flex items-center justify-center">
+                <Star className="text-[#00BFFF] w-8 h-8" fill="#00BFFF" strokeWidth={1} />
               </div>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#00BFFF]">ENTREGA E<br />MONTAGEM</h3>
