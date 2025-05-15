@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { WhatsappIcon } from 'lucide-react';
+import { Whatsapp } from 'lucide-react';
 
 interface HeroProps {
   onWhatsAppClick: () => void;
