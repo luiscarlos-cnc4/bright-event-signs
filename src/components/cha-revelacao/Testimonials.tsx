@@ -46,10 +46,9 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onWhatsAppClick }) => {
         <div className="relative mx-auto max-w-xs sm:max-w-sm md:max-w-md">
           <Carousel 
             className="mx-auto" 
-            onSelect={(index) => {
-              // Fix: Cast index to number or ensure it's a number before setting state
-              if (typeof index === 'number') {
-                setActiveTestimonialIndex(index);
+            onSelect={(api) => {
+              if (typeof api === 'number') {
+                setActiveTestimonialIndex(api);
               }
             }}
           >
@@ -74,10 +73,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onWhatsAppClick }) => {
         
         <div className="flex justify-center mt-6 md:mt-10 space-x-2 md:space-x-4">
           {testimonials.map((_, index) => (
-            <div 
+            <button 
               key={index} 
-              className={`h-2 md:h-3 w-2 md:w-3 rounded-full ${index === activeTestimonialIndex ? "bg-[#FF00FF]" : "bg-[#00BFFF]"} cursor-pointer`} 
+              className={`h-2 md:h-3 w-2 md:w-3 rounded-full ${index === activeTestimonialIndex ? "bg-[#FF00FF]" : "bg-[#00BFFF]"}`} 
               onClick={() => setActiveTestimonialIndex(index)}
+              aria-label={`Depoimento ${index + 1} de ${testimonials.length}`}
+              aria-current={index === activeTestimonialIndex}
             />
           ))}
         </div>

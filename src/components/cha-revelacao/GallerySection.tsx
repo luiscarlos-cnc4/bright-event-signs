@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const GallerySection: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -128,6 +129,16 @@ const GallerySection: React.FC = () => {
             <div 
               key={index} 
               className={`h-1.5 md:h-2 w-1.5 md:w-2 rounded-full ${index === activeIndex ? "bg-[#FF00FF]" : "bg-[#00BFFF]"}`}
+              onClick={() => setActiveIndex(index)}
+              role="button"
+              tabIndex={0}
+              aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === activeIndex}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setActiveIndex(index);
+                }
+              }}
             />
           ))}
         </div>
@@ -135,12 +146,20 @@ const GallerySection: React.FC = () => {
 
       <Dialog open={!!selectedImage} onOpenChange={closeImage}>
         <DialogContent className="max-w-4xl bg-vegas-black border-vegas-gold/30">
+          <DialogTitle>
+            <VisuallyHidden>Imagem ampliada do chá revelação</VisuallyHidden>
+          </DialogTitle>
           {selectedImage && (
-            <img
-              src={selectedImage}
-              alt="Imagem ampliada do chá revelação"
-              className="w-full h-auto"
-            />
+            <div aria-describedby="image-description">
+              <img
+                src={selectedImage}
+                alt="Imagem ampliada do chá revelação"
+                className="w-full h-auto"
+              />
+              <div id="image-description" className="sr-only">
+                Visualização ampliada da foto de chá de revelação com letreiros iluminados
+              </div>
+            </div>
           )}
         </DialogContent>
       </Dialog>
