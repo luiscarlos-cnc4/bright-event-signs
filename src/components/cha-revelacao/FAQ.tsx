@@ -19,7 +19,7 @@ const FAQ: React.FC = () => {
     }, 
     {
       question: "Quanto tempo dura a locação?",
-      answer: "A locação padrão é de 24 horas, mas podemos ajustar de acordo com sua necessidade."
+      answer: "A locação padrão é de 5 horas, mas podemos ajustar de acordo com sua necessidade."
     }, 
     {
       question: "Vocês entregam em qualquer lugar?",
