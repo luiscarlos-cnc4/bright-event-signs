@@ -27,14 +27,14 @@ const HowItWorks: React.FC = () => {
   return (
     <section className="py-12 md:py-16 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-8 md:mb-12">
+        <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-center text-white mb-8 md:mb-12">
           Como funciona nosso processo
         </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-[#e4257e] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="w-16 h-16 bg-accent text-accent-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 {step.number}
               </div>
               <h3 className="text-lg md:text-xl font-semibold text-white mb-3">

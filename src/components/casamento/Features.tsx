@@ -22,8 +22,8 @@ const Features: React.FC = () => {
   return (
     <section className="py-12 md:py-16 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-8 md:mb-12">
-          Por que escolher a <span className="text-[#00BFFF]">VEGAS</span> <span className="text-[#FF00FF]">LETRAS</span> para seu casamento?
+        <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-center text-white mb-8 md:mb-12">
+          Por que escolher a <span className="text-accent">VEGAS</span> <span className="text-primary">LETRAS</span> para seu casamento?
         </h2>
         
         <div className="grid md:grid-cols-3 gap-8">

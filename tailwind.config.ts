@@ -19,6 +19,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        playfair: ["'Playfair Display'", "serif"],
+        inter: ["Inter", "sans-serif"],
+      },
       colors: {
         vegas: {
           gold: "#FFD700",

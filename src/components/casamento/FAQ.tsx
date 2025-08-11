@@ -37,7 +37,7 @@ const FAQ: React.FC = () => {
   return (
     <section className="py-12 md:py-16 px-4 bg-black">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-8 md:mb-12">
+        <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-center text-white mb-8 md:mb-12">
           Perguntas Frequentes sobre Casamentos
         </h2>
         

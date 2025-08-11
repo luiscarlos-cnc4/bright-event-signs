@@ -60,3 +60,15 @@ html {
 .hover-glow {
   @apply hover:shadow-[0_0_15px_rgba(255,215,0,0.5)] transition-shadow duration-300;
 }
+
+/* Scoped theme for /casamento route */
+.wedding-theme {
+  /* Romantic rose as primary (CTA, highlights) */
+  --primary: 330 83% 52%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Elegant gold as accent (details, numbers, lines) */
+  --accent: 46 97% 50%;
+  --accent-foreground: 240 5.9% 10%;
+}
+
