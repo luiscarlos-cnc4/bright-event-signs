@@ -112,7 +112,7 @@ const GallerySection: React.FC = () => {
   return (
     <section className="py-12 md:py-16 px-4 bg-black">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-white">GALERIA</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-white">GALERIA – Chá Revelação em Piracicaba</h2>
         
         <div className="relative">
           <Carousel className="w-full" setApi={setApi}>
@@ -123,9 +123,12 @@ const GallerySection: React.FC = () => {
                     <AspectRatio ratio={1} className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer">
                       <img 
                         src={image.src} 
-                        alt={image.alt}
+                        alt={`${image.alt} em Piracicaba com letreiros luminosos Vegas Letras`}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         onClick={() => openImage(image.src)}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </AspectRatio>
                   </div>
@@ -166,11 +169,12 @@ const GallerySection: React.FC = () => {
             <div aria-describedby="image-description">
               <img
                 src={selectedImage}
-                alt="Imagem ampliada do chá revelação"
+                alt="Imagem ampliada de chá revelação em Piracicaba com letreiros luminosos Vegas Letras"
                 className="w-full h-auto"
+                decoding="async"
               />
               <div id="image-description" className="sr-only">
-                Visualização ampliada da foto de chá de revelação com letreiros iluminados
+                Visualização ampliada da foto de chá revelação com letreiros luminosos em Piracicaba
               </div>
             </div>
           )}
