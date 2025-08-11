@@ -28,6 +28,11 @@ const Hero: React.FC = () => {
               src="/lovable-uploads/163113a7-82f9-4d47-885a-1389ba056a4f.png" 
               alt="Casal em casamento com letras iluminadas Vegas Letras" 
               className="w-full h-full object-cover"
+              onError={(e) => {
+                const img = e.currentTarget as HTMLImageElement;
+                img.onerror = null;
+                img.src = "/lovable-uploads/5196f240-0585-46d2-a665-98805eea33f3.png";
+              }}
             />
           </div>
         </div>
