@@ -63,9 +63,9 @@ html {
 
 /* Scoped theme for /casamento route */
 .wedding-theme {
-  /* Romantic rose as primary (CTA, highlights) */
-  --primary: 330 83% 52%;
-  --primary-foreground: 0 0% 100%;
+  /* Elegant gold as primary (CTA, highlights) */
+  --primary: 46 97% 50%;
+  --primary-foreground: 240 5.9% 10%;
 
   /* Elegant gold as accent (details, numbers, lines) */
   --accent: 46 97% 50%;
