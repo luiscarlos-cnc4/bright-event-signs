@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
         <div className="mb-8 mx-auto max-w-md">
           <div className="aspect-video relative rounded-lg overflow-hidden">
             <img 
-              src="/lovable-uploads/cb56ae38-61ab-44cf-aac7-6a37f478c7cc.png" 
+              src="/lovable-uploads/163113a7-82f9-4d47-885a-1389ba056a4f.png" 
               alt="Casal em casamento com letras iluminadas Vegas Letras" 
               className="w-full h-full object-cover"
             />
