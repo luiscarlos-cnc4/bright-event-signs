@@ -6,11 +6,11 @@ const Hero: React.FC = () => {
       <div className="max-w-4xl mx-auto text-center">
         <img 
           src="/lovable-uploads/e119c6d9-e014-4421-a7b0-c842dcccb14f.png" 
-          alt="Vegas Letras" 
+          alt="Vegas Letras logo branco" 
           className="mx-auto h-12 md:h-16 mb-4" 
         />
         
-        <h1 className="font-playfair text-3xl md:text-4xl font-semibold mb-4 leading-tight">
+        <h1 className="text-3xl md:text-4xl font-semibold mb-4 leading-tight">
           Transforme seu<br />
           casamento em uma<br />
           celebração <span className="text-accent">VEGAS</span> <span className="text-primary">LETRAS</span>
@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
         <div className="mb-8 mx-auto max-w-md">
           <div className="aspect-video relative rounded-lg overflow-hidden">
             <img 
-              src="/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png" 
+              src="/lovable-uploads/5196f240-0585-46d2-a665-98805eea33f3.png" 
               alt="Decoração de casamento com letreiros luminosos Vegas Letras" 
               className="w-full h-full object-cover"
             />

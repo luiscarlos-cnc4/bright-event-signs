@@ -1,33 +1,26 @@
 import React, { useState } from 'react';
 import ImageModal from '@/components/gallery/ImageModal';
-
+import { galleryCategories } from '@/components/gallery/galleryData';
 const GallerySection: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const galleryImages = [
-    "/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png",
-    "/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png",
-    "/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png",
-    "/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png",
-    "/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png",
-    "/lovable-uploads/3fa7bc2b-9a33-4f51-b430-30e809ef94af.png"
-  ];
+  const weddingImages = (galleryCategories.find(c => c.category === "Casamentos")?.images) || [];
 
   return (
     <section className="py-12 md:py-16 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-center text-white mb-8 md:mb-12">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-white mb-8 md:mb-12">
           Veja a magia que criamos em outros casamentos
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          {galleryImages.map((image, index) => (
+          {weddingImages.map((image, index) => (
             <div key={index} className="aspect-square relative rounded-lg overflow-hidden">
               <img 
-                src={image} 
-                alt={`Casamento decorado pela Vegas Letras ${index + 1}`}
+                src={image.src} 
+                alt={image.alt}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-                onClick={() => setSelectedImage(image)}
+                onClick={() => setSelectedImage(image.src)}
                 loading="lazy"
               />
             </div>

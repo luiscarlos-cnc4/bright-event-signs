@@ -34,7 +34,7 @@ const Casamento = () => {
         />
       </Helmet>
 
-      <div className="wedding-theme bg-black min-h-screen font-inter">
+      <div className="wedding-theme bg-black min-h-screen">
         <Hero />
         <Features />
         <GallerySection />
