@@ -12,28 +12,20 @@ const Testimonials: React.FC = () => {
     {
       text: "Todo mundo amou o letreiro, nós amamos o letreiro e virou atração",
       time: "20:44",
-      hearts: true,
-      author: "Maria",
-      location: "Piracicaba/SP"
+      hearts: true
     }, 
     {
       text: "Ficou incrível! Todos os convidados ficaram impressionados com o letreiro luminoso!",
       time: "18:23",
-      emoji: "🤩🤩🤩",
-      author: "Lucas",
-      location: "Santa Bárbara d'Oeste/SP"
+      emoji: "🤩🤩🤩"
     }, 
     {
       text: "Vocês foram super profissionais! Entrega pontual e montagem perfeita.",
-      time: "14:52",
-      author: "Ana",
-      location: "Piracicaba/SP"
+      time: "14:52"
     }, 
     {
       text: "Com certeza vou recomendar para todos os meus amigos!",
-      time: "14:53",
-      author: "Carla",
-      location: "Limeira/SP"
+      time: "14:53"
     }
   ];
 
@@ -78,9 +70,6 @@ const Testimonials: React.FC = () => {
                     <div className="flex flex-col items-start space-y-3 md:space-y-4">
                       <p className="text-white text-left text-base md:text-lg">{testimonial.text}</p>
                       <div className="text-gray-400 self-end text-sm">{testimonial.time}</div>
-                      {testimonial.author && testimonial.location && (
-                        <div className="text-white/80 text-left text-sm md:text-base">— {testimonial.author} – {testimonial.location}</div>
-                      )}
                       {testimonial.hearts && <div className="text-red-500 text-left text-xl md:text-2xl">❤️❤️❤️</div>}
                       {testimonial.emoji && <div className="text-left text-xl md:text-2xl">{testimonial.emoji}</div>}
                     </div>

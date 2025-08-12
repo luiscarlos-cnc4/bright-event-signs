@@ -6,28 +6,24 @@ const FAQ: React.FC = () => {
   
   const faqs = [
     {
-      question: "Vocês atendem cidades próximas de Piracicaba?",
-      answer: "Sim! Atendemos Piracicaba e região: Santa Bárbara d’Oeste, Limeira, Rio Claro, Americana e cidades próximas. Consulte a taxa de deslocamento."
-    },
-    {
-      question: "Qual o valor da locação do letreiro luminoso em Piracicaba?",
-      answer: "O valor varia conforme o modelo do letreiro, duração do evento e data. Envie sua data e bairro no WhatsApp para um orçamento rápido e sem compromisso."
-    },
-    {
-      question: "Com quanto tempo de antecedência devo reservar?",
-      answer: "Recomendamos de 2 a 4 semanas de antecedência para garantir disponibilidade, especialmente em datas disputadas."
-    },
-    {
       question: "Qual o tamanho das letras?",
-      answer: "As letras possuem 1 metro de altura e a largura varia conforme a letra, em média também em torno de 1 metro."
+      answer: "As letras possuem 1 metro de altura, já a largura varia de acordo com cada letra, mas na média fica em torno de 1 metro também."
     }, 
     {
       question: "Como faço para reservar o letreiro?",
-      answer: "Fale conosco pelo WhatsApp e confirme sua data. Enviamos todas as orientações para a reserva."
+      answer: "Para reservar o letreiro, basta entrar em contato conosco pelo WhatsApp e fazer sua reserva."
+    }, 
+    {
+      question: "Quanto tempo antes devo reservar?",
+      answer: "Recomendamos que você faça sua reserva com pelo menos 2 semanas de antecedência para garantir a disponibilidade."
     }, 
     {
       question: "Quanto tempo dura a locação?",
-      answer: "A locação padrão é de 5 horas, podendo ser ajustada de acordo com a sua necessidade."
+      answer: "A locação padrão é de 5 horas, mas podemos ajustar de acordo com sua necessidade."
+    }, 
+    {
+      question: "Vocês entregam em qualquer lugar?",
+      answer: "Entregamos em Campinas e região. Para locais mais distantes, entre em contato para verificar a disponibilidade."
     }
   ];
   
