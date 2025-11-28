@@ -10,6 +10,9 @@ import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import ChaRevelacao from "./pages/ChaRevelacao";
 import Casamento from "./pages/Casamento";
+import AdminNewBooking from "./pages/AdminNewBooking";
+import BookingForm from "./pages/BookingForm";
+import BookingConfirmation from "./pages/BookingConfirmation";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +26,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/admin/nova-reserva" element={<AdminNewBooking />} />
+            <Route path="/reserva/:id" element={<BookingForm />} />
+            <Route path="/reserva/confirmacao" element={<BookingConfirmation />} />
             <Route path="/cha-revelacao" element={<ChaRevelacao />} />
             <Route path="/casamento" element={<Casamento />} />
             <Route path="*" element={<NotFound />} />

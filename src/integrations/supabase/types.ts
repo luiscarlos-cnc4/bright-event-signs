@@ -14,7 +14,105 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          address_city: string | null
+          address_neighborhood: string | null
+          address_number: string | null
+          address_street: string | null
+          address_zip: string | null
+          cpf: string | null
+          created_at: string
+          created_by: string | null
+          email: string | null
+          event_city: string | null
+          event_date: string | null
+          event_end_time: string | null
+          event_neighborhood: string | null
+          event_number: string | null
+          event_start_time: string | null
+          event_street: string | null
+          event_venue_name: string | null
+          event_zip: string | null
+          full_name: string | null
+          id: string
+          payment_method: string
+          price: number
+          rental_period: string
+          residence_block: string | null
+          residence_condo_name: string | null
+          residence_type: string | null
+          residence_unit: string | null
+          sign_name: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          address_city?: string | null
+          address_neighborhood?: string | null
+          address_number?: string | null
+          address_street?: string | null
+          address_zip?: string | null
+          cpf?: string | null
+          created_at?: string
+          created_by?: string | null
+          email?: string | null
+          event_city?: string | null
+          event_date?: string | null
+          event_end_time?: string | null
+          event_neighborhood?: string | null
+          event_number?: string | null
+          event_start_time?: string | null
+          event_street?: string | null
+          event_venue_name?: string | null
+          event_zip?: string | null
+          full_name?: string | null
+          id?: string
+          payment_method: string
+          price: number
+          rental_period?: string
+          residence_block?: string | null
+          residence_condo_name?: string | null
+          residence_type?: string | null
+          residence_unit?: string | null
+          sign_name: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          address_city?: string | null
+          address_neighborhood?: string | null
+          address_number?: string | null
+          address_street?: string | null
+          address_zip?: string | null
+          cpf?: string | null
+          created_at?: string
+          created_by?: string | null
+          email?: string | null
+          event_city?: string | null
+          event_date?: string | null
+          event_end_time?: string | null
+          event_neighborhood?: string | null
+          event_number?: string | null
+          event_start_time?: string | null
+          event_street?: string | null
+          event_venue_name?: string | null
+          event_zip?: string | null
+          full_name?: string | null
+          id?: string
+          payment_method?: string
+          price?: number
+          rental_period?: string
+          residence_block?: string | null
+          residence_condo_name?: string | null
+          residence_type?: string | null
+          residence_unit?: string | null
+          sign_name?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

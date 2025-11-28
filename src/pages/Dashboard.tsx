@@ -1,12 +1,11 @@
 
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { LogOut } from "lucide-react";
+import { LogOut, Plus } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import { supabase } from "@/lib/supabase";
-import EventBookingForm from "@/components/forms/EventBookingForm";
+import { supabase } from "@/integrations/supabase/client";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -53,9 +52,14 @@ const Dashboard = () => {
 
         <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6">
           <h2 className="text-2xl font-semibold text-vegas-gold mb-6">
-            Novo Agendamento
+            Gerenciar Reservas
           </h2>
-          <EventBookingForm />
+          <Link to="/admin/nova-reserva">
+            <Button className="bg-vegas-gold text-black hover:bg-vegas-gold/80">
+              <Plus className="mr-2 h-4 w-4" />
+              Nova Reserva - Gerar Link
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
